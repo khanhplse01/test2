@@ -1,0 +1,53 @@
+body {
+			font-size: 16px;
+			word-spacing: 1px;
+			line-height: 2px;
+		}
+		.title {
+			text-align: center;
+			font-size: 3em;
+			text-transform: uppercase;
+			font-family: tahoma;
+			box-sizing: border-box;
+			
+		}
+		#line1 {
+			width: 5%;
+			color: red;
+			background-color: red;
+			box-sizing: border-box;
+			
+			
+		}
+		#dong1{
+			padding-top: 30px;
+	
+		}
+
+		#khoi1{
+			text-align: center;
+			width: 25%;
+			float: left;
+			
+			padding-top: 50px;
+			
+		}
+		#khoi2 {
+			text-align: center;
+			width: 25%;
+			float: left;
+			padding-top: 50px;
+		}
+		#khoi3 {
+			text-align: center;
+			width: 25%;
+			float: left;
+			padding-top: 50px;
+		}
+		#khoi4 {
+			text-align: center;
+			width: 25%;
+			float: left;
+			padding-top: 50px;
+		}
+
