@@ -1,0 +1,593 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link rel="stylesheet" href="shop.css">	
+	<script src="TrangChu.js"></script>
+</head>
+
+<body>
+	<div id="banner">
+		<a href="TrangChu.html">khanh's baby store</a>
+		
+		<input placeholder="Search" type="search" id="input1">
+		<a href="Login.html"><input type="button" value="Login" id="input2"/></a>
+		
+	</div>
+	<div id="content">
+		<ul id="menu1">
+				<li><a href="TrangChu.html">Home</a></li>
+				<li><a href="shop.html">Shop</a></li>
+				<li><a href="About Us.html">About Us</a></li>
+			</ul>
+		
+			<ul id="menu2">
+				<li><a href="#" onClick="openChatBox('besidebag'),notice()"><i class="fas fa-shopping-bag"></i></a></li>
+				<li><a href="https://www.facebook.com/" target="_blank" ><i class="fab fa-facebook-f"></i></a></li>
+				<li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+			</ul>
+	</div>
+	<div id="besidebag">
+		<div></div>
+		<div id="bag">
+			<div>
+				<span onClick="closeChatBox('besidebag')"><i class="fas fa-angle-right"></i></span>
+				<span>Cart</span>
+			</div>
+		
+			<div>
+				<span>Cart is empty</span>
+			</div>
+		</div>
+	</div>
+	<div id="mainmenu">
+		<div>
+			<img src="1.jpg" onClick="showMenu('showaccessories','showclothes','showsupportitems')"/>
+			<p>Accessories</p>
+		</div>
+		
+		<div>
+			<img src="2.jpg" onClick="showMenu('showclothes','showaccessories','showsupportitems')"/>
+			<p>Clothes</p>
+		</div>
+		
+		<div>
+			<img src="3.jpg" onClick="showMenu('showsupportitems','showclothes','showaccessories')">
+			<p>Support Items</p>
+		</div>
+	</div></br>
+	
+	<div id="chatbox1">
+		<span>Supporter Online <i class="fas fa-headset"></i></span>
+		<span id="button1" onClick="openChatBox('chatbox2')"><i class="fas fa-arrow-up" ></i></span>
+	</div>
+	<div id="chatbox2">
+		<div >
+			<span id="button2" onClick="closeChatBox('chatbox2')"><i class="fas fa-angle-down" ></i></i></span>
+			<span><i class="fas fa-smile-beam" id="icon"></i></span></br>
+			<span>Let's Chat!</span></br>
+			<span>Hi there.I'm available to answer</span></br>
+			<span>Your questions</span></br>
+		</div>
+		<div>
+			<span><input type="Text" placeholder="Type your message" size="35%"/></span>
+			<span><i class="far fa-arrow-alt-circle-right"></i></span>
+		</div>
+	</div>
+
+	<div id="showaccessories">
+		<div id="title"> 
+			<div id="type"><p><i>Best Seller <i class="fas fa-running"></i> <i class="fas fa-arrow-right"></i> <i class="fas fa-arrow-right"></i> <i class="fas fa-arrow-right"></i></i></p></div>
+			<div>
+				<div id="outside">
+					<div  class="inside" id="inside1">
+						<div>
+							<img src="a1.jpg">
+							<div id="detail">
+							<p>Hello White Bear Hat</p></br>
+							<p>12$</p></br>
+							<p>(128)Comment</p></br>
+							</div>
+							
+						</div>
+						
+						<div>
+							<img src="a2.jpg">
+							<div id="detail">
+								<p>Hello Chồn Hat</p></br>
+								<p>15$</p></br>
+								<p>(79)Comment</p></br>
+							</div>
+							
+						</div>
+						
+						<div>
+							<img src="a3.jpg">
+							<div id="detail">
+							<p>Animal socks</p></br>
+							<p>10$</p></br>
+							<p>(44)Comment</p></br>
+							</div>
+							
+						</div>
+						
+						<div>
+							<img src="a4.jpg">
+							<div id="detail">
+							<p>Pinky socks</p></br>
+							<p>10$</p></br>
+							<p>(29)Comment</p></br>
+							</div>
+						</div> 	
+						
+						<div>
+							<img src="a5.jpg">
+							<div id="detail">
+							<p>Color socks</p></br>
+							<p>9$</p></br>
+							<p>(11)Comment</p></br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="threedot">
+			<input type="button" value="" onClick="move('inside1', '0px')"/>
+			<input type="button" value="" onClick="move('inside1', '-300px')" />
+			<input type="button" value="" onClick="move('inside1', '-600px')"/>
+		</div>
+
+		<div id="space"></div>
+
+		<div id="title"> 
+			<div id="type"><p><i>Hat  <i class="fas fa-arrow-right"></i> <i class="fas fa-arrow-right"></i> <i class="fas fa-arrow-right"></i></i></p></div>
+			<div>
+				<div id="outside">
+					<div class="inside" id="inside2">
+						<div>
+							<img src="a1.jpg">
+							<div id="detail">
+							<p>Hello White Bear Hat</p></br>
+							<p>12$</p></br>
+							<p>(128)Comment</p></br>
+							
+							</div>
+						</div>
+						
+						<div>
+							<img src="a2.jpg">
+							<div id="detail">
+							<p>Hello Chồn Hat</p></br>
+							<p>15$</p></br>
+							<p>(79)Comment</p></br>
+							
+							</div>
+						</div>
+						
+						<div>
+							<img src="a6.jpg">
+							<div id="detail">
+							<p>Reindeer Hat</p></br>
+							<p>100$</p></br>
+							<p>(2)Comment</p></br>
+							
+							</div>
+						</div>
+						
+						<div>
+							<img src="a7.jpg">
+							<div id="detail">
+							<p>Brown Bear Hat</p></br>
+							<p>20$</p></br>
+							<p>(14)Comment</p></br>
+							
+							</div>
+						</div>
+						
+						<div>
+							<img src="a8.png">
+							<div id="detail">
+							<p>Monkey Hat</p></br>
+							<p>27$</p></br>
+							<p>(2)Comment</p></br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="threedot">
+			<input type="button" value="" onClick="move('inside2', '0px')"/>
+			<input type="button" value="" onClick="move('inside2', '-300px')" />
+			<input type="button" value="" onClick="move('inside2', '-600px')"/>
+		</div>
+
+		<div id="space"></div>
+
+		<div id="title"> 
+			<div id="type"><p><i>Stocking  <i class="fas fa-arrow-right"></i> <i class="fas fa-arrow-right"></i> <i class="fas fa-arrow-right"></i></i></p></div>
+			<div>
+				<div id="outside">
+					<div class="inside" id="inside3">
+						<div>
+							<img src="a3.jpg">
+							<div id="detail">
+								<p>Animal Socks</p></br>
+							<p>10$</p></br>
+							<p>(44)Comment</p></br>
+							</div>
+							
+						</div>
+						
+						<div>
+							<img src="a4.jpg">
+							<div id="detail">
+							<p>Pinky socks</p></br>
+							<p>10$</p></br>
+							<p>(29)Comment</p></br>
+							</div>
+							
+						</div>
+						
+						<div>
+							<img src="a5.jpg">
+							<div id="detail">
+								<p>Color socks</p></br>
+							<p>9$</p></br>
+							<p>(11)Comment</p></br>
+							</div>
+							
+						</div>
+						
+						<div>
+							<img src="a8.jpg">
+							<div id="detail">
+							<p>Basic Baby gloves</p></br>
+							<p>4$</p></br>
+							<p>(0)Comment</p></br>
+							</div>
+							
+						</div>
+						
+						<div>
+							<img src="a9.jpg">
+							<div id="detail">
+							<p>Basic Baby Stocks</p></br>
+							<p>2$</p></br>
+							<p>(7)Comment</p></br>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="threedot">
+			<input type="button" value="" onClick="move('inside3', '0px')"/>
+			<input type="button" value="" onClick="move('inside3', '-300px')" />
+			<input type="button" value="" onClick="move('inside3', '-600px')"/>
+		</div>
+	</div>
+
+	<div id="showclothes">
+		<div id="title"> 
+			<div id="type"><p><i>Best Seller <i class="fas fa-running"></i> <i class="fas fa-arrow-right"></i> <i class="fas fa-arrow-right"></i> <i class="fas fa-arrow-right"></i></i></p></div>
+			<div>
+				<div id="outside">
+					<div  class="inside" id="inside4">
+						<div>
+							<img src="c1.jpg">
+							<div id="detail">
+							<p>Red spot </p></br>
+							<p>12$</p></br>
+							<p>(98)Comment</p></br>
+							</div>
+						</div>
+						
+						<div>
+							<img src="c2.jpg">
+							<div id="detail">
+								
+							<p>Pink Penguin</p></br>
+							<p>20$</p></br>
+							<p>(89)Comment</p></br>
+							</div>
+						</div>
+						
+						<div>
+							<img src="c3.jpg">
+							<div id="detail">
+								<p>Baby skirt dots</p></br>
+							<p>25$</p></br>
+							<p>(70)Comment</p></br>
+							</div>
+							
+						</div>
+						
+						<div>
+							<img src="c4.jpg">
+							<div id="detail">
+								<p>Pinky socks</p></br>
+							<p>10$</p></br>
+							<p>(29)Comment</p></br>
+							</div>
+							
+						</div> 	
+						
+						<div>
+							<img src="c5.jpg">
+							<div id="detail">
+							<p>Baby Chinese-clothes style</p></br>
+							<p>9$</p></br>
+							<p>(11)Comment</p></br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="threedot">
+			<input type="button" value="" onClick="move('inside4', '0px')"/>
+			<input type="button" value="" onClick="move('inside4', '-300px')" />
+			<input type="button" value="" onClick="move('inside4', '-600px')"/>
+		</div>
+
+		<div id="space"></div>
+
+		<div id="title"> 
+			<div id="type"><p><i>Normal  <i class="fas fa-arrow-right"></i> <i class="fas fa-arrow-right"></i> <i class="fas fa-arrow-right"></i></i></p></div>
+			<div>
+				<div id="outside">
+					<div class="inside" id="inside5">
+						<div>
+							<img src="c1.jpg">
+							<div id="detail">
+							<p>Red spot </p></br>
+							<p>12$</p></br>
+							<p>(98)Comment</p></br>
+							</div>
+							
+						</div>
+						
+						<div>
+							<img src="c3.jpg">
+							<div id="detail">
+							<p>Baby skirt dots</p></br>
+							<p>25$</p></br>
+							<p>(70)Comment</p></br>
+							</div>
+						</div>
+						
+						<div>
+							<img src="c5.jpg">
+							<div id="detail">
+								
+							<p>Baby Chinese-clothes style</p></br>
+							<p>9$</p></br>
+							<p>(6)Comment</p></br>
+							</div>
+						</div>
+						
+						<div>
+							<img src="c6.jpg">
+							<p>Cloud-logo baby T-shirt</p></br>
+							<p>20$</p></br>
+							<p>(0)Comment</p></br>
+						</div>
+						
+						<div>
+							<img src="c7.jpg">
+							<div id="detail">
+							<p>Butterfly-logo baby T-shirtt</p></br>
+							<p>27$</p></br>
+							<p>(2)Comment</p></br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="threedot">
+			<input type="button" value="" onClick="move('inside5', '0px')"/>
+			<input type="button" value="" onClick="move('inside5', '-300px')" />
+			<input type="button" value="" onClick="move('inside5', '-600px')"/>
+		</div>
+
+		<div id="space"></div>
+
+		<div id="title"> 
+			<div id="type"><p><i>Keep Warm  <i class="fas fa-arrow-right"></i> <i class="fas fa-arrow-right"></i> <i class="fas fa-arrow-right"></i></i></p></div>
+			<div>
+				<div id="outside">
+					<div class="inside" id="inside6">
+						<div>
+							<img src="c2.jpg">
+							<div id="detail">
+							<p>Pink Penguin</p></br>
+							<p>20$</p></br>
+							<p>(89)Comment</p></br>
+							</div>
+						</div>
+						
+						<div>
+							<img src="c4.jpg">
+							<div id="detail">
+							<p>Pinky socks</p></br>
+							<p>10$</p></br>
+							<p>(29)Comment</p></br>
+							</div>
+						</div>
+						
+						<div>
+							<img src="c8.jpg">
+							<div id="detail">
+							<p>Baby Pajama </p></br>
+							<p>9$</p></br>
+							<p>(11)Comment</p></br>
+							</div>
+						</div>
+						
+						<div>
+							<img src="c9.jpg">
+							<div id="detail">
+								
+							<p>Outside clothes</p></br>
+							<p>4$</p></br>
+							<p>(0)Comment</p></br>
+							</div>
+						</div>
+						
+						<div>
+							<img src="c10.jpg">
+							<div id="detail">
+							<p>Combo outside</p></br>
+							<p>2$</p></br>
+							<p>(7)Comment</p></br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="threedot">
+			<input type="button" value="" onClick="move('inside6', '0px')"/>
+			<input type="button" value="" onClick="move('inside6', '-300px')" />
+			<input type="button" value="" onClick="move('inside6', '-600px')"/>
+		</div>
+	</div>
+	
+
+	<div id="showsupportitems">
+		<div id="title"> 
+			<div id="type"><p><i>Best Seller <i class="fas fa-running"></i> <i class="fas fa-arrow-right"></i> <i class="fas fa-arrow-right"></i> <i class="fas fa-arrow-right"></i></i></p></div>
+			<div>
+				<div id="outside">
+					<div  class="inside" id="inside7">
+						<div>
+							<img src="s1.jpg">
+							<div id="detail">
+							<p>Automatic Baby Crib </p></br>
+							<p>12$</p></br>
+							<p>(98)Comment</p></br>
+							</div>
+						</div>
+						
+						<div>
+							<img src="s2.jpg">
+							<div id="detail">
+							<p>National Baby Crib</p></br>
+							<p>20$</p></br>
+							<p>(89)Comment</p></br>
+							</div>
+						</div>
+						
+						<div>
+							<img src="s3.jpg">
+							<div id="detail">
+							<p>Baby trolley</p></br>
+							<p>25$</p></br>
+							<p>(70)Comment</p></br>
+							</div>
+						</div>
+						
+						<div>
+							<img src="s4.jpeg">
+							<div id="detail">
+								
+							<p>Baby front carrier belt</p></br>
+							<p>10$</p></br>
+							<p>(29)Comment</p></br>
+							</div>
+						</div> 	
+						
+						<div>
+							<img src="s5.jpg">
+							<div id="detail">
+							<p>Baby back carrier belt</p></br>
+							<p>9$</p></br>
+							<p>(11)Comment</p></br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="threedot">
+			<input type="button" value="" onClick="move('inside7', '0px')"/>
+			<input type="button" value="" onClick="move('inside7', '-300px')" />
+			<input type="button" value="" onClick="move('inside7', '-600px')"/>
+		</div>
+
+		<div id="space"></div>
+
+		<div id="title"> 
+			<div id="type"><p><i>  <i class="fas fa-arrow-right"></i> <i class="fas fa-arrow-right"></i> <i class="fas fa-arrow-right"></i></i></p></div>
+			<div>
+				<div id="outside">
+					<div class="inside" id="inside8">
+						<div>
+							<img src="s5.jpg">
+							<div id="detail">
+							<p>Baby back carrier belt</p></br>
+							<p>9$</p></br>
+							<p>(11)Comment</p></br>
+							</div>
+						</div>
+						
+						<div>
+							<img src="s3.jpg">
+							<div id="detail">
+							<p>Baby trolley</p></br>
+							<p>25$</p></br>
+							<p>(70)Comment</p></br>
+							</div>
+						</div>
+						
+						<div>
+							<img src="s4.jpeg">
+							<div id="detail">
+							<p>Baby front carrier belt</p></br>
+							<p>10$</p></br>
+							<p>(29)Comment</p></br>
+							</div>
+						</div> 
+						
+						<div>
+							<img src="s1.jpg">
+							<div id="detail">
+							<p>Automatic Baby Crib </p></br>
+							<p>12$</p></br>
+							<p>(98)Comment</p></br>
+							</div>
+						</div>
+
+						<div>
+							<img src="s2.jpg">
+							<div id="detail">
+							<p>National Baby Crib</p></br>
+							<p>20$</p></br>
+							<p>(89)Comment</p></br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="threedot">
+			<input type="button" value="" onClick="move('inside8', '0px')"/>
+			<input type="button" value="" onClick="move('inside8', '-300px')" />
+			<input type="button" value="" onClick="move('inside8', '-600px')"/>
+		</div>
+
+		<div id="space"></div>
+
+		
+	</div>
+		
+<!--	<div id="last"><p>&copy; By Khanh's Baby Store. Design by Khánh Phan</p></div>-->
+	
+</body>
+</html>

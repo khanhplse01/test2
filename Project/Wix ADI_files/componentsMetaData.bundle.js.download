@@ -1,0 +1,1723 @@
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("lodash"));
+	else if(typeof define === 'function' && define.amd)
+		define(["lodash"], factory);
+	else {
+		var a = typeof exports === 'object' ? factory(require("lodash")) : factory(root["_"]);
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})((typeof self !== 'undefined' ? self : this), function(__WEBPACK_EXTERNAL_MODULE__4__) {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "https://static.parastorage.com/services/wix-ui-santa/1.22.0/";
+/******/
+/******/
+/******/ 	__webpack_require__.p = typeof window !== 'undefined' && window.__STATICS_BASE_URL__ || __webpack_require__.p;
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 698);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ 102:
+/*!***********************************************************!*\
+  !*** ./legacy/components/RichTextBox/propertiesSchema.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var propertiesSchema = {
+  RichTextBoxProperties: {
+    type: 'object',
+    allOf: [{
+      properties: {
+        textAlignment: {
+          type: 'string',
+          default: 'left',
+          enum: ['left', 'right', 'center'],
+          description: 'the text alignment',
+          maxLength: 100
+        },
+        textPadding: {
+          type: 'number',
+          default: 18,
+          minimum: 0,
+          maximum: 100,
+          description: 'the value of the textPadding'
+        },
+        toolbarPosition: {
+          type: 'string',
+          default: 'top',
+          enum: ['top', 'bottom', 'inline'],
+          description: 'the location of the toolbar',
+          maxLength: 20
+        },
+        placeholder: {
+          type: 'string',
+          description: 'the placeholder',
+          default: '',
+          maxLength: 4000
+        },
+        defaultTextType: {
+          type: 'string',
+          default: 'placeholderText',
+          enum: ['none', 'initialText', 'placeholderText', 'placeholderAndInitialText'],
+          description: 'the type of the default text for the input',
+          maxLength: 100
+        },
+        allowLinks: {
+          type: 'boolean',
+          description: 'Are links allowed'
+        }
+      }
+    }, {
+      $ref: 'InputProperties'
+    }]
+  }
+};
+
+exports.default = propertiesSchema;
+
+/***/ }),
+
+/***/ 103:
+/*!**************************************************!*\
+  !*** ./components/Slider/componentDefinition.js ***!
+  \**************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  'wixui.Slider': {
+    skins: ['wixui.skins.Slider'],
+    dataTypes: ['Slider'],
+    propertyType: 'SliderProperties',
+    nickname: 'slider',
+    styles: {
+      slider1: 'wixui.skins.Slider'
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 104:
+/*!************************************!*\
+  !*** ./components/Slider/hooks.js ***!
+  \************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _lodash = __webpack_require__(/*! lodash */ 4);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function updateOrientationLayout(prevLayout) {
+  return _lodash2.default.assign({}, prevLayout, {
+    width: prevLayout.height,
+    height: prevLayout.width
+  });
+}
+
+function getTicksSize(tickShape, tickPosition) {
+  if (tickPosition === 'middle') {
+    return 0;
+  }
+
+  switch (tickShape) {
+    default:
+    case 'line':
+      return 22;
+    case 'dot':
+      return 15;
+    case 'none':
+      return 0;
+  }
+}
+
+function shouldShowTicks(data, props) {
+  return data.step > 0 && props.tickMarksShape !== 'none';
+}
+
+function updateTicksLayout(_ref) {
+  var prevLayout = _ref.prevLayout,
+      prevProps = _ref.prevProps,
+      nextProps = _ref.nextProps,
+      prevData = _ref.prevData,
+      nextData = _ref.nextData;
+
+  var lastShowTicks = shouldShowTicks(prevData, prevProps);
+  var showTicks = shouldShowTicks(nextData, nextProps);
+  var lastSize = lastShowTicks ? getTicksSize(prevProps.tickMarksShape, prevProps.tickMarksPosition) : 0;
+  var size = showTicks ? getTicksSize(nextProps.tickMarksShape, nextProps.tickMarksPosition) : 0;
+  var sizeDiff = size - lastSize;
+  var dim = nextProps.orientation === 'horizontal' ? 'height' : 'width';
+
+  return _lodash2.default.assign({}, prevLayout, _defineProperty({}, dim, prevLayout[dim] + sizeDiff));
+}
+
+function didOrientationChange(prevProps, nextProps) {
+  return nextProps.orientation && prevProps.orientation && nextProps.orientation !== prevProps.orientation;
+}
+
+function didTicksChange(prevProps, nextProps, prevData, nextData) {
+  var lastShowTicks = shouldShowTicks(prevData, prevProps);
+  var nextShowTicks = shouldShowTicks(nextData, nextProps);
+  var lastTickMarksShape = prevProps.tickMarksShape;
+  var nextTickMarksShape = nextProps.tickMarksShape;
+  var lastTickMarksPosition = prevProps.tickMarksPosition;
+  var nextTickMarksPosition = nextProps.tickMarksPosition;
+
+  return lastShowTicks !== nextShowTicks || lastTickMarksShape !== nextTickMarksShape || lastTickMarksPosition !== nextTickMarksPosition;
+}
+
+var beforeUpdate = function beforeUpdate(_ref2) {
+  var compDriver = _ref2.compDriver,
+      prevProps = _ref2.prevProps,
+      nextProps = _ref2.nextProps,
+      prevData = _ref2.prevData,
+      nextData = _ref2.nextData;
+
+  var prevLayout = compDriver.layout.get();
+  var newLayout = void 0;
+
+  if (didOrientationChange(prevProps, nextProps)) {
+    newLayout = updateOrientationLayout(prevLayout);
+  } else if (didTicksChange(prevProps, nextProps, prevData, nextData)) {
+    newLayout = updateTicksLayout({ prevLayout: prevLayout, prevProps: prevProps, nextProps: nextProps, prevData: prevData, nextData: nextData });
+  }
+
+  if (newLayout) {
+    compDriver.layout.update(newLayout);
+  }
+};
+
+var beforeUpdateProperties = function beforeUpdateProperties(compDriver, nextProps) {
+  var prevProps = compDriver.properties.get();
+  var prevData = compDriver.data.get();
+  return beforeUpdate({ compDriver: compDriver, prevProps: prevProps, nextProps: nextProps, prevData: prevData, nextData: prevData });
+};
+
+var beforeUpdateData = function beforeUpdateData(compDriver, nextData) {
+  var prevProps = compDriver.properties.get();
+  var prevData = compDriver.data.get();
+  return beforeUpdate({ compDriver: compDriver, prevProps: prevProps, nextProps: prevProps, prevData: prevData, nextData: nextData });
+};
+
+var getSize = function getSize(currentLayout, nextLayout) {
+  return {
+    width: nextLayout.width || currentLayout.width,
+    height: nextLayout.height || currentLayout.height
+  };
+};
+
+var beforeUpdateLayout = function beforeUpdateLayout(compDriver, nextLayout) {
+  if (!nextLayout.width && !nextLayout.height) {
+    return;
+  }
+
+  var currentLayout = compDriver.layout.get();
+  var compProperties = compDriver.properties.get();
+
+  var _getSize = getSize(currentLayout, nextLayout),
+      width = _getSize.width,
+      height = _getSize.height;
+
+  var newLayout = _lodash2.default.cloneDeep(nextLayout);
+
+  if (compProperties.orientation === 'vertical') {
+    var minHeight = 4 * width;
+    newLayout.height = Math.max(height, minHeight);
+  } else if (compProperties.orientation === 'horizontal') {
+    var minWidth = 4 * height;
+    newLayout.width = Math.max(width, minWidth);
+  }
+
+  compDriver.layout.update(newLayout);
+};
+
+var hooks = {
+  beforeUpdateProperties: beforeUpdateProperties,
+  beforeUpdateData: beforeUpdateData,
+  beforeUpdateLayout: beforeUpdateLayout
+};
+
+exports.default = hooks;
+
+/***/ }),
+
+/***/ 105:
+/*!***************************************!*\
+  !*** ./components/Slider/metaData.js ***!
+  \***************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  rotatable: false
+};
+
+/***/ }),
+
+/***/ 106:
+/*!*****************************************!*\
+  !*** ./components/Slider/dataSchema.js ***!
+  \*****************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var dataSchema = {
+  Slider: {
+    type: 'object',
+    properties: {
+      min: {
+        type: 'number',
+        default: 0,
+        description: 'Minimum value'
+      },
+      max: {
+        type: 'number',
+        default: 100,
+        description: 'Maximum value'
+      },
+      value: {
+        type: 'number',
+        default: 50,
+        description: 'Current value'
+      },
+      step: {
+        type: 'number',
+        default: 0,
+        description: 'Step value'
+      },
+      stepType: {
+        type: 'string',
+        default: 'value',
+        enum: ['value', 'count'],
+        description: 'When set to \'value\', step represents the value of each step. When set to \'count\', step represents the total steps count'
+      },
+      disabled: {
+        type: 'boolean',
+        default: false,
+        description: 'Determines whether the slider is disabled or not'
+      },
+      readOnly: {
+        type: 'boolean',
+        default: false,
+        description: 'Determines whether the slider is read-only or not'
+      }
+    }
+  }
+};
+
+module.exports = dataSchema;
+
+/***/ }),
+
+/***/ 107:
+/*!***************************************************!*\
+  !*** ./components/TimePicker/propertiesSchema.js ***!
+  \***************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var propertiesSchema = {
+  TimePickerProperties: {
+    type: 'object',
+    allOf: [{
+      properties: {
+        alignment: {
+          type: 'string',
+          enum: ['left', 'center', 'right'],
+          default: 'left'
+        },
+        useAmPmFormat: {
+          type: 'boolean',
+          default: false,
+          description: 'Should the display format be 12 hours (or 24)'
+        },
+        controller: {
+          type: 'string',
+          enum: ['text', 'stepper', 'dropdown'],
+          default: 'text',
+          description: 'The display of the time picker'
+        },
+        initialTime: {
+          type: 'string',
+          enum: ['none', 'current', 'value', 'placeholder'],
+          default: 'current',
+          description: 'What the time picker should display on load'
+        }
+      }
+    }, {
+      $ref: 'InputProperties'
+    }]
+  }
+};
+
+module.exports = propertiesSchema;
+
+/***/ }),
+
+/***/ 108:
+/*!*****************************************************!*\
+  !*** ./components/AddressInput/propertiesSchema.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var propertiesSchema = {
+  AddressInputProperties: {
+    type: 'object',
+    allOf: [{
+      properties: {
+        alignment: {
+          type: 'string',
+          enum: ['left', 'center', 'right'],
+          default: 'left'
+        },
+        isIconVisible: {
+          type: 'boolean',
+          default: false
+        },
+        isDividerVisible: {
+          type: 'boolean',
+          default: false
+        }
+      }
+    }, {
+      $ref: 'InputProperties'
+    }]
+  }
+};
+
+module.exports = propertiesSchema;
+
+/***/ }),
+
+/***/ 109:
+/*!*****************************************************!*\
+  !*** ./components/RatingsInput/propertiesSchema.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var propertiesSchema = {
+  RatingsInputProperties: {
+    type: 'object',
+    allOf: [{
+      properties: {
+        showTitle: {
+          type: 'boolean',
+          default: true
+        },
+        showLabels: {
+          type: 'boolean',
+          default: true
+        },
+        labelPosition: {
+          type: 'string',
+          enum: ['top', 'bottom', 'side'],
+          default: 'top'
+        },
+        labelAlignment: {
+          type: 'string',
+          enum: ['left', 'center', 'right'],
+          default: 'center'
+        },
+        shapeSize: {
+          type: 'number',
+          minimum: 15,
+          maximum: 100,
+          default: 24
+        },
+        shapeSpacing: {
+          type: 'number',
+          minimum: 1,
+          maximum: 50,
+          default: 5
+        },
+        direction: {
+          type: 'string',
+          enum: ['ltr', 'rtl'],
+          default: 'ltr'
+        },
+        required: {
+          type: 'boolean',
+          default: false
+        }
+      }
+    }, {
+      $ref: 'DefaultProperties'
+    }]
+  }
+};
+
+module.exports = propertiesSchema;
+
+/***/ }),
+
+/***/ 110:
+/*!*******************************************************!*\
+  !*** ./components/RatingsDisplay/propertiesSchema.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var propertiesSchema = {
+  RatingsDisplayProperties: {
+    type: 'object',
+    allOf: [{
+      properties: {
+        showReviewsCount: {
+          type: 'boolean',
+          default: true
+        },
+        showRating: {
+          type: 'boolean',
+          default: true
+        },
+        noReviewsMode: {
+          type: 'string',
+          enum: ['nothing', 'emptyIcons', 'placeholderText'],
+          default: 'emptyIcons'
+        },
+        ratingPosition: {
+          type: 'string',
+          enum: ['before', 'after'],
+          default: 'before'
+        },
+        shapeSize: {
+          type: 'number',
+          minimum: 15,
+          maximum: 100,
+          default: 24
+        },
+        shapeSpacing: {
+          type: 'number',
+          minimum: 1,
+          maximum: 50,
+          default: 5
+        },
+        alignment: {
+          type: 'string',
+          enum: ['left', 'right', 'center'],
+          default: 'left'
+        },
+        direction: {
+          type: 'string',
+          enum: ['ltr', 'rtl'],
+          default: 'ltr'
+        },
+        renderSeo: {
+          type: 'boolean',
+          default: true
+        }
+      }
+    }, {
+      $ref: 'DefaultProperties'
+    }]
+  }
+};
+
+module.exports = propertiesSchema;
+
+/***/ }),
+
+/***/ 111:
+/*!****************************************************!*\
+  !*** ./components/VideoPlayer/propertiesSchema.js ***!
+  \****************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var propertiesSchema = {
+  VideoPlayerProperties: {
+    type: 'object',
+    allOf: [{
+      properties: {
+        showVideoTitle: {
+          type: 'boolean',
+          default: true
+        },
+        autoplay: {
+          type: 'boolean',
+          default: false,
+          description: 'Autoplay video'
+        },
+        loop: {
+          type: 'boolean',
+          default: false,
+          description: 'Play video on loop'
+        },
+        share: {
+          type: 'boolean',
+          default: true,
+          description: 'Allow to share video'
+        },
+        controlsVisibility: {
+          type: 'string',
+          enum: ['hover', 'never'],
+          default: 'hover'
+        }
+      }
+    }, {
+      $ref: 'DefaultProperties'
+    }]
+  }
+};
+
+module.exports = propertiesSchema;
+
+/***/ }),
+
+/***/ 118:
+/*!***************************************************!*\
+  !*** ./legacy/components/RichTextBox/ds/index.js ***!
+  \***************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _componentDefinition = __webpack_require__(/*! ../componentDefinition */ 144);
+
+var _componentDefinition2 = _interopRequireDefault(_componentDefinition);
+
+var _propertiesSchema = __webpack_require__(/*! ../propertiesSchema */ 102);
+
+var _propertiesSchema2 = _interopRequireDefault(_propertiesSchema);
+
+var _dataSchema = __webpack_require__(/*! ../dataSchema */ 145);
+
+var _dataSchema2 = _interopRequireDefault(_dataSchema);
+
+var _metaData = __webpack_require__(/*! ../metaData */ 146);
+
+var _metaData2 = _interopRequireDefault(_metaData);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var componentType = 'wixui.RichTextBox';
+
+module.exports = {
+  componentType: componentType,
+  componentDefinition: _componentDefinition2.default,
+  metaData: _metaData2.default,
+  dataSchema: _dataSchema2.default,
+  propertiesSchema: _propertiesSchema2.default
+};
+
+/***/ }),
+
+/***/ 119:
+/*!*******************************************!*\
+  !*** ./components/TimePicker/ds/index.js ***!
+  \*******************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _componentDefinition = __webpack_require__(/*! ../componentDefinition */ 148);
+
+var _componentDefinition2 = _interopRequireDefault(_componentDefinition);
+
+var _metaData = __webpack_require__(/*! ../metaData */ 149);
+
+var _metaData2 = _interopRequireDefault(_metaData);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var dataSchema = __webpack_require__(/*! ../dataSchema */ 150);
+
+var propertiesSchema = __webpack_require__(/*! ../propertiesSchema */ 107);
+var componentType = 'wixui.TimePicker';
+
+module.exports = {
+  componentDefinition: _componentDefinition2.default,
+  componentType: componentType,
+  dataSchema: dataSchema,
+  metaData: _metaData2.default,
+  propertiesSchema: propertiesSchema
+};
+
+/***/ }),
+
+/***/ 120:
+/*!*********************************************!*\
+  !*** ./components/AddressInput/ds/index.js ***!
+  \*********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _componentDefinition = __webpack_require__(/*! ../componentDefinition */ 151);
+
+var _componentDefinition2 = _interopRequireDefault(_componentDefinition);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var dataSchema = __webpack_require__(/*! ../dataSchema */ 152);
+var propertiesSchema = __webpack_require__(/*! ../propertiesSchema */ 108);
+var componentType = 'wixui.AddressInput';
+var metaData = __webpack_require__(/*! ../metaData */ 153);
+
+module.exports = {
+  componentDefinition: _componentDefinition2.default,
+  componentType: componentType,
+  dataSchema: dataSchema,
+  propertiesSchema: propertiesSchema,
+  metaData: metaData
+};
+
+/***/ }),
+
+/***/ 121:
+/*!*********************************************!*\
+  !*** ./components/RatingsInput/ds/index.js ***!
+  \*********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _componentDefinition = __webpack_require__(/*! ../componentDefinition */ 154);
+
+var _componentDefinition2 = _interopRequireDefault(_componentDefinition);
+
+var _metaData = __webpack_require__(/*! ../metaData */ 155);
+
+var _metaData2 = _interopRequireDefault(_metaData);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var propertiesSchema = __webpack_require__(/*! ../propertiesSchema */ 109);
+var dataSchema = __webpack_require__(/*! ../dataSchema */ 156);
+
+var componentType = 'wixui.RatingsInput';
+
+module.exports = {
+  componentType: componentType,
+  componentDefinition: _componentDefinition2.default,
+  metaData: _metaData2.default,
+  dataSchema: dataSchema,
+  propertiesSchema: propertiesSchema
+};
+
+/***/ }),
+
+/***/ 122:
+/*!***********************************************!*\
+  !*** ./components/RatingsDisplay/ds/index.js ***!
+  \***********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _componentDefinition = __webpack_require__(/*! ../componentDefinition */ 157);
+
+var _componentDefinition2 = _interopRequireDefault(_componentDefinition);
+
+var _metaData = __webpack_require__(/*! ../metaData */ 158);
+
+var _metaData2 = _interopRequireDefault(_metaData);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var propertiesSchema = __webpack_require__(/*! ../propertiesSchema */ 110);
+var dataSchema = __webpack_require__(/*! ../dataSchema */ 159);
+
+var componentType = 'wixui.RatingsDisplay';
+
+module.exports = {
+  componentType: componentType,
+  componentDefinition: _componentDefinition2.default,
+  metaData: _metaData2.default,
+  dataSchema: dataSchema,
+  propertiesSchema: propertiesSchema
+};
+
+/***/ }),
+
+/***/ 123:
+/*!********************************************!*\
+  !*** ./components/VideoPlayer/ds/index.js ***!
+  \********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _componentDefinition = __webpack_require__(/*! ../componentDefinition */ 160);
+
+var _componentDefinition2 = _interopRequireDefault(_componentDefinition);
+
+var _metaData = __webpack_require__(/*! ../metaData */ 161);
+
+var _metaData2 = _interopRequireDefault(_metaData);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var propertiesSchema = __webpack_require__(/*! ../propertiesSchema */ 111);
+var dataSchema = __webpack_require__(/*! ../dataSchema */ 162);
+
+var componentType = 'wixui.VideoPlayer';
+
+module.exports = {
+  componentType: componentType,
+  componentDefinition: _componentDefinition2.default,
+  metaData: _metaData2.default,
+  dataSchema: dataSchema,
+  propertiesSchema: propertiesSchema
+};
+
+/***/ }),
+
+/***/ 144:
+/*!**************************************************************!*\
+  !*** ./legacy/components/RichTextBox/componentDefinition.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  'wixui.RichTextBox': {
+    skins: ['wixui.skins.RichTextBox'],
+    dataTypes: ['RichTextBox'],
+    propertyType: 'RichTextBoxProperties',
+    nickname: 'richTextBox',
+    styles: {
+      richtextbox1: 'wixui.skins.RichTextBox'
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 145:
+/*!*****************************************************!*\
+  !*** ./legacy/components/RichTextBox/dataSchema.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var dataSchema = {
+  RichTextBox: {
+    type: 'object',
+    allOf: [{
+      properties: {
+        maxLength: {
+          type: ['number', 'null'],
+          description: 'maximum number of characters allowed'
+        }
+      }
+    }, {
+      $ref: 'BaseTextInput'
+    }]
+  }
+};
+
+exports.default = dataSchema;
+
+/***/ }),
+
+/***/ 146:
+/*!***************************************************!*\
+  !*** ./legacy/components/RichTextBox/metaData.js ***!
+  \***************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  disableable: true,
+  layoutLimits: {
+    minHeight: 100,
+    minWidth: 200
+  }
+};
+
+/***/ }),
+
+/***/ 148:
+/*!******************************************************!*\
+  !*** ./components/TimePicker/componentDefinition.js ***!
+  \******************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  'wixui.TimePicker': {
+    skins: ['wixui.skins.TimePicker'],
+    dataTypes: ['TimePickerData'],
+    propertyType: 'TimePickerProperties',
+    nickname: 'timePicker',
+    styles: {
+      tp1: 'wixui.skins.TimePicker'
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 149:
+/*!*******************************************!*\
+  !*** ./components/TimePicker/metaData.js ***!
+  \*******************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  rotatable: false,
+  layoutLimits: {
+    minHeight: 42,
+    minWidth: 150
+  }
+};
+
+/***/ }),
+
+/***/ 150:
+/*!*********************************************!*\
+  !*** ./components/TimePicker/dataSchema.js ***!
+  \*********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var dataSchema = {
+  TimePickerData: {
+    type: 'object',
+    allOf: [{
+      properties: {
+        placeholder: {
+          type: 'string',
+          description: 'The value of the placeholder if chosen',
+          maxLength: 1000
+        },
+        step: {
+          type: 'number',
+          minimum: 1,
+          maximum: 60,
+          default: 1,
+          description: 'Increment step in minutes'
+        }
+      }
+    }, {
+      $ref: 'BaseTextInput'
+    }]
+  }
+};
+
+module.exports = dataSchema;
+
+/***/ }),
+
+/***/ 151:
+/*!********************************************************!*\
+  !*** ./components/AddressInput/componentDefinition.js ***!
+  \********************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  'wixui.AddressInput': {
+    skins: ['wixui.skins.AddressInput'],
+    dataTypes: ['AddressInput'],
+    propertyType: 'AddressInputProperties',
+    nickname: 'addressInput',
+    styles: {
+      ai1: 'wixui.skins.AddressInput'
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 152:
+/*!***********************************************!*\
+  !*** ./components/AddressInput/dataSchema.js ***!
+  \***********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var dataSchema = {
+  AddressInput: {
+    type: 'object',
+    properties: {
+      locale: { type: 'string', maxLength: 100 },
+      googleMapsApiKey: { type: 'string', maxLength: 400 },
+      filter: {
+        oneOf: [{
+          type: 'null'
+        }, {
+          type: 'object',
+          properties: {
+            country: { type: 'string', maxLength: 10 }
+          }
+        }],
+        default: null
+      },
+      sorting: {
+        oneOf: [{
+          type: 'null'
+        }, {
+          type: 'object',
+          properties: {
+            location: {
+              type: 'object',
+              properties: {
+                lat: { type: 'number' },
+                lng: { type: 'number' }
+              }
+            },
+            radius: {
+              type: 'number',
+              default: 100
+            },
+            formatted: { type: 'string', maxLength: 10 }
+          }
+        }],
+        default: null
+      }
+    }
+  }
+};
+
+module.exports = dataSchema;
+
+/***/ }),
+
+/***/ 153:
+/*!*********************************************!*\
+  !*** ./components/AddressInput/metaData.js ***!
+  \*********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var metaData = {
+  layoutLimits: {
+    minHeight: 40,
+    minWidth: 200
+  }
+};
+
+module.exports = metaData;
+
+/***/ }),
+
+/***/ 154:
+/*!********************************************************!*\
+  !*** ./components/RatingsInput/componentDefinition.js ***!
+  \********************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  'wixui.RatingsInput': {
+    skins: ['wixui.skins.Rating'],
+    dataTypes: ['RatingsInput'],
+    propertyType: 'RatingsInputProperties',
+    nickname: 'ratingsInput',
+    styles: {
+      ri1: 'wixui.skins.Rating'
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 155:
+/*!*********************************************!*\
+  !*** ./components/RatingsInput/metaData.js ***!
+  \*********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  defaultMobileProperties: {
+    shapeSize: 25,
+    shapeSpacing: 5
+  },
+  isRepeatable: true
+};
+
+/***/ }),
+
+/***/ 156:
+/*!***********************************************!*\
+  !*** ./components/RatingsInput/dataSchema.js ***!
+  \***********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var dataSchema = {
+  RatingsInput: {
+    type: 'object',
+    properties: {
+      value: {
+        type: ['number', 'null'],
+        description: 'The rating value currently selected',
+        minimum: 0,
+        maximum: 5
+      },
+      titleText: {
+        type: 'string',
+        description: 'the title before a value is selected',
+        maxLength: 300
+      },
+      labels: {
+        type: 'object',
+        description: 'contains the labels for the different values. maps 1-5 as keys to strings',
+        default: {
+          1: 'Bad', 2: 'Fine', 3: 'OK', 4: 'Good', 5: 'Great'
+        }
+      }
+    }
+  }
+};
+
+module.exports = dataSchema;
+
+/***/ }),
+
+/***/ 157:
+/*!**********************************************************!*\
+  !*** ./components/RatingsDisplay/componentDefinition.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  'wixui.RatingsDisplay': {
+    skins: ['wixui.skins.Rating'],
+    dataTypes: ['RatingsDisplay'],
+    propertyType: 'RatingsDisplayProperties',
+    nickname: 'ratingsDisplay',
+    styles: {
+      rd1: 'wixui.skins.Rating'
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 158:
+/*!***********************************************!*\
+  !*** ./components/RatingsDisplay/metaData.js ***!
+  \***********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  defaultMobileProperties: {
+    shapeSize: 20,
+    shapeSpacing: 5
+  }
+};
+
+/***/ }),
+
+/***/ 159:
+/*!*************************************************!*\
+  !*** ./components/RatingsDisplay/dataSchema.js ***!
+  \*************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var dataSchema = {
+  RatingsDisplay: {
+    type: 'object',
+    properties: {
+      rating: {
+        type: 'number',
+        description: 'The rating displayed by the component',
+        minimum: 1,
+        maximum: 5
+      },
+      svgId: {
+        type: 'string',
+        maxLength: 100
+      },
+      numRatings: {
+        type: 'number',
+        description: 'The amount of ratings the rating is based on',
+        minimum: 0
+      },
+      reviewsCountLabel: {
+        type: 'string',
+        default: 'Reviews',
+        maxLength: 400,
+        description: 'Text that describes the numRatings value'
+      },
+      noReviewsPlaceholder: {
+        type: 'string',
+        default: 'Be the first to rate this item',
+        maxLength: 1000,
+        description: 'Placeholder text when there aren\'t any reviews'
+      }
+    }
+  }
+};
+
+module.exports = dataSchema;
+
+/***/ }),
+
+/***/ 160:
+/*!*******************************************************!*\
+  !*** ./components/VideoPlayer/componentDefinition.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  'wixui.VideoPlayer': {
+    skins: ['wixui.skins.VideoPlayer'],
+    dataTypes: ['VideoPlayer'],
+    propertyType: 'VideoPlayerProperties',
+    nickname: 'videoPlayer',
+    styles: {
+      vp1: 'wixui.skins.VideoPlayer'
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 161:
+/*!********************************************!*\
+  !*** ./components/VideoPlayer/metaData.js ***!
+  \********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  rotatable: false,
+  layoutLimits: {
+    minHeight: 180,
+    minWidth: 200
+  }
+};
+
+/***/ }),
+
+/***/ 162:
+/*!**********************************************!*\
+  !*** ./components/VideoPlayer/dataSchema.js ***!
+  \**********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var dataSchema = {
+  VideoPlayer: {
+    type: 'object',
+    properties: {
+      videoRef: {
+        type: ['string', 'null'],
+        pseudoType: ['ref']
+      },
+      videoUrl: {
+        type: ['string', 'null'],
+        default: null
+      },
+      videoTitle: {
+        type: 'string',
+        default: '',
+        maxLength: 255
+      },
+      description: {
+        type: 'string',
+        default: '',
+        maxLength: 1000,
+        description: 'Video Description'
+      },
+      logoRef: {
+        type: ['string', 'null'],
+        pseudoType: ['ref']
+      }
+    }
+  }
+};
+
+module.exports = dataSchema;
+
+/***/ }),
+
+/***/ 4:
+/*!****************************************************************************************************!*\
+  !*** external {"amd":"lodash","umd":"lodash","commonjs":"lodash","commonjs2":"lodash","root":"_"} ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__4__;
+
+/***/ }),
+
+/***/ 698:
+/*!*******************************!*\
+  !*** ./componentsMetaData.js ***!
+  \*******************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _richTextBox$componen;
+
+var _ds = __webpack_require__(/*! ./legacy/components/RichTextBox/ds */ 118);
+
+var _ds2 = _interopRequireDefault(_ds);
+
+var _ds3 = __webpack_require__(/*! ./components/Slider/ds */ 95);
+
+var _ds4 = _interopRequireDefault(_ds3);
+
+var _ds5 = __webpack_require__(/*! ./components/TimePicker/ds */ 119);
+
+var _ds6 = _interopRequireDefault(_ds5);
+
+var _ds7 = __webpack_require__(/*! ./components/RatingsInput/ds */ 121);
+
+var _ds8 = _interopRequireDefault(_ds7);
+
+var _ds9 = __webpack_require__(/*! ./components/RatingsDisplay/ds */ 122);
+
+var _ds10 = _interopRequireDefault(_ds9);
+
+var _ds11 = __webpack_require__(/*! ./components/VideoPlayer/ds */ 123);
+
+var _ds12 = _interopRequireDefault(_ds11);
+
+var _ds13 = __webpack_require__(/*! ./components/AddressInput/ds */ 120);
+
+var _ds14 = _interopRequireDefault(_ds13);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+exports.default = (_richTextBox$componen = {}, _defineProperty(_richTextBox$componen, _ds2.default.componentType, _ds2.default.metaData), _defineProperty(_richTextBox$componen, _ds4.default.componentType, _ds4.default.metaData), _defineProperty(_richTextBox$componen, _ds6.default.componentType, _ds6.default.metaData), _defineProperty(_richTextBox$componen, _ds8.default.componentType, _ds8.default.metaData), _defineProperty(_richTextBox$componen, _ds10.default.componentType, _ds10.default.metaData), _defineProperty(_richTextBox$componen, _ds12.default.componentType, _ds12.default.metaData), _defineProperty(_richTextBox$componen, _ds14.default.componentType, _ds14.default.metaData), _richTextBox$componen);
+
+/***/ }),
+
+/***/ 88:
+/*!***********************************************!*\
+  !*** ./components/Slider/propertiesSchema.js ***!
+  \***********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var propertiesSchema = {
+  SliderProperties: {
+    type: 'object',
+    allOf: [{
+      properties: {
+        trackSize: {
+          type: 'number',
+          default: 25
+        },
+        orientation: {
+          type: 'string',
+          enum: ['horizontal', 'vertical'],
+          default: 'horizontal'
+        },
+        thumbShape: {
+          type: 'string',
+          enum: ['circle', 'square', 'rectangle', 'bar'],
+          default: 'circle'
+        },
+        tickMarksShape: {
+          type: 'string',
+          enum: ['none', 'line', 'dot'],
+          default: 'line'
+        },
+        tooltipVisibility: {
+          type: 'string',
+          enum: ['none', 'hover', 'always'],
+          default: 'hover'
+        },
+        tooltipPosition: {
+          type: 'string',
+          enum: ['normal', 'across'],
+          default: 'normal'
+        },
+        tooltipPrefix: {
+          type: 'string',
+          maxLength: 30
+        },
+        tooltipSuffix: {
+          type: 'string',
+          maxLength: 30
+        },
+        tickMarksPosition: {
+          type: 'string',
+          enum: ['normal', 'middle', 'across'],
+          default: 'normal'
+        },
+        dir: {
+          type: 'string',
+          enum: ['ltr', 'rtl'],
+          default: 'ltr'
+        }
+      }
+    }, {
+      $ref: 'InputProperties'
+    }]
+  }
+};
+
+module.exports = propertiesSchema;
+
+/***/ }),
+
+/***/ 95:
+/*!***************************************!*\
+  !*** ./components/Slider/ds/index.js ***!
+  \***************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _componentDefinition = __webpack_require__(/*! ../componentDefinition */ 103);
+
+var _componentDefinition2 = _interopRequireDefault(_componentDefinition);
+
+var _hooks = __webpack_require__(/*! ../hooks */ 104);
+
+var _hooks2 = _interopRequireDefault(_hooks);
+
+var _metaData = __webpack_require__(/*! ../metaData */ 105);
+
+var _metaData2 = _interopRequireDefault(_metaData);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var propertiesSchema = __webpack_require__(/*! ../propertiesSchema */ 88);
+var dataSchema = __webpack_require__(/*! ../dataSchema */ 106);
+
+var componentType = 'wixui.Slider';
+
+module.exports = {
+  componentType: componentType,
+  componentDefinition: _componentDefinition2.default,
+  hooks: _hooks2.default,
+  metaData: _metaData2.default,
+  dataSchema: dataSchema,
+  propertiesSchema: propertiesSchema
+};
+
+/***/ })
+
+/******/ });
+});
+//# sourceMappingURL=componentsMetaData.bundle.js.map

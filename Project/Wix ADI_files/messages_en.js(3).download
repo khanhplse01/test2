@@ -1,0 +1,89 @@
+'use strict';
+
+try {
+  angular.module('galleryAppTranslations');
+} catch (e) {
+  angular.module('galleryAppTranslations', ['pascalprecht.translate']);
+}
+
+angular.module('galleryAppTranslations').config(['$translateProvider',
+  function ($translateProvider) {
+    var translations = {
+      'SORT_BY_LABEL': 'SORT BY:',
+      'RELEVANCE_SELECT': 'Relevance',
+      'PRICE_LOW_TO_HIGH_SELECT': 'Price - low to high',
+      'PRICE_HIGH_TO_LOW_SELECT': 'Price - high to low',
+      'ADD_TO_CART_BUTTON': 'ADD TO CART',
+      'OUT_OF_STOCK_LABEL': 'Out of stock',
+      'LOAD_MORE_BUTTON': 'LOAD MORE',
+      'NO_PRODUCTS_MESSAGE_MAIN': 'THIS PAGE HAS NO PRODUCTS <br /> TO SHOW AT THE MOMENT.',
+      'NO_PRODUCTS_MESSAGE_MINI_GALLERY_MAIN': 'There are no products to show at the moment',
+      'NO_PRODUCTS_MESSAGE_MINI_GALLERY_SUB': 'Check out the other great finds in this store!',
+      'BACK_TO_HOMEPAGE_BUTTON': 'BACK TO HOMEPAGE',
+      'EMPTY_GALLERY_TITLE_MAIN': 'HMM...',
+      'EMPTY_GALLERY_TITLE_SUB': 'THIS PAGE HAS NO PRODUCTS TO SHOW AT THE MOMENT.',
+      'EMPTY_GALLERY_CONTINUE_SHOP_TEXT': 'But some great finds are waiting for you on other pages.',
+      'EMPTY_GALLERY_CONTINUE_SHOP_BUTTON': 'BACK TO HOMEPAGE',
+      'EMPTY_MINI_GALLERY_TITLE': 'There are no products to show at the moment',
+      'QUICKֹֹֹ_VIEW': 'QUICK VIEW',
+      'SORT_BY': 'Sort by',
+      'sort': {
+        'NEWEST': 'Newest',
+        'PRICE_LOW': 'Price (low to high)',
+        'PRICE_HIGH': 'Price (high to low)',
+        'NAME_AZ': 'Name A-Z',
+        'NAME_ZA': 'Name Z-A'
+      },
+      'filter': {
+        'CLEAN_ALL': 'Clear filters',
+        'MAIN_TITLE': 'Shop by',
+        'CATEGORY_TITLE': 'Category',
+        'PRICE_TITLE': 'Price',
+        'CATEGORY_ALL': 'All'
+      },
+      'NO_PRODUCTS_FILTERED_MESSAGE_MAIN': 'No items matched your search criteria. Try widening your search.',
+      'sr': {
+        'PRICE_MIN_TITLE': 'Minimum price',
+        'PRICE_MAX_TITLE': 'Maximum price',
+        'PRODUCT_PRICE_BEFORE_DISCOUNT': 'Regular Price',
+        'PRODUCT_PRICE_AFTER_DISCOUNT': 'Sale Price',
+        'PRODUCT_PRICE_WHEN_THERE_IS_NO_DISCOUNT': 'Price',
+        'region': {
+          'GALLERY': 'Product Gallery',
+          'GALLERY_FILTERS': 'Filters',
+          'SORTING': 'Sorting',
+          'SLIDER_GALLERY': 'Slider Gallery'
+        },
+        'SORTING_SELECT_BOX_NAME': 'Select box for sorting',
+        'label': {
+          'DIGITAL_PRODUCT_LABEL': 'Digital Product'
+        },
+        'ANNOUNCE_FOUND_ITEMS_ON_FILTERS_UPDATE': '{{numberOfFoundProducts}} items matched your search criteria.'
+      },
+      'gallery': {
+        'filters': {
+          'filterList': {
+            'items': {
+              'collection': {
+                'label': 'Collection'
+              },
+              'price': {
+                'label': 'Price'
+              },
+              'productOptions': {
+                'label': 'Product Options'
+              },
+              'custom': {
+                'label': 'Custom Filter'
+              }
+            }
+          }
+        }
+      },
+      'test_key': 'test'
+    };
+    $translateProvider.translations('en', translations);
+    $translateProvider.translations(translations);
+    $translateProvider.preferredLanguage('en');
+  }
+]);

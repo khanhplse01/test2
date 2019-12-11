@@ -1,0 +1,4966 @@
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define("AiFeedbackOpener", [], factory);
+	else if(typeof exports === 'object')
+		exports["AiFeedbackOpener"] = factory();
+	else
+		root["AiFeedbackOpener"] = factory();
+})((typeof self !== 'undefined' ? self : this), function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "https://static.parastorage.com/services/@wix/ai-feedback-opener/1.0.0/";
+/******/
+/******/
+/******/ 	__webpack_require__.p = typeof window !== 'undefined' && window.__STATICS_BASE_URL__ || __webpack_require__.p;
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 61);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/*!*****************************************************************!*\
+  !*** ../node_modules/@wix/ai-feedback-common/dist/src/index.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/*! exports used: ClientIncomingMessageTypes, ClientOutgoingMessageTypes, CloseReason, PageNames, getRandomGuid4 */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var layout_constants_1 = __webpack_require__(/*! ./constants/layout.constants */ 38);
+exports.EditRegionsActions = layout_constants_1.EditRegionsActions;
+exports.Layouts = layout_constants_1.Layouts;
+var page_names_constants_1 = __webpack_require__(/*! ./constants/page-names.constants */ 39);
+exports.PageNames = page_names_constants_1.PageNames;
+var messages_constants_1 = __webpack_require__(/*! ./constants/messages.constants */ 40);
+exports.ClientIncomingMessageTypes = messages_constants_1.ClientIncomingMessageTypes;
+exports.ClientOutgoingMessageTypes = messages_constants_1.ClientOutgoingMessageTypes;
+exports.CloseReason = messages_constants_1.CloseReason;
+var getRandomGuid_1 = __webpack_require__(/*! ./utils/getRandomGuid */ 41);
+exports.getRandomGuid4 = getRandomGuid_1.getRandomGuid4;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 1 */
+/*!******************************************!*\
+  !*** ../node_modules/axios/lib/utils.js ***!
+  \******************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var bind = __webpack_require__(/*! ./helpers/bind */ 12);
+var isBuffer = __webpack_require__(/*! is-buffer */ 43);
+
+/*global toString:true*/
+
+// utils is a library of generic helper functions non-specific to axios
+
+var toString = Object.prototype.toString;
+
+/**
+ * Determine if a value is an Array
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Array, otherwise false
+ */
+function isArray(val) {
+  return toString.call(val) === '[object Array]';
+}
+
+/**
+ * Determine if a value is an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an ArrayBuffer, otherwise false
+ */
+function isArrayBuffer(val) {
+  return toString.call(val) === '[object ArrayBuffer]';
+}
+
+/**
+ * Determine if a value is a FormData
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an FormData, otherwise false
+ */
+function isFormData(val) {
+  return (typeof FormData !== 'undefined') && (val instanceof FormData);
+}
+
+/**
+ * Determine if a value is a view on an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
+ */
+function isArrayBufferView(val) {
+  var result;
+  if ((typeof ArrayBuffer !== 'undefined') && (ArrayBuffer.isView)) {
+    result = ArrayBuffer.isView(val);
+  } else {
+    result = (val) && (val.buffer) && (val.buffer instanceof ArrayBuffer);
+  }
+  return result;
+}
+
+/**
+ * Determine if a value is a String
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a String, otherwise false
+ */
+function isString(val) {
+  return typeof val === 'string';
+}
+
+/**
+ * Determine if a value is a Number
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Number, otherwise false
+ */
+function isNumber(val) {
+  return typeof val === 'number';
+}
+
+/**
+ * Determine if a value is undefined
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if the value is undefined, otherwise false
+ */
+function isUndefined(val) {
+  return typeof val === 'undefined';
+}
+
+/**
+ * Determine if a value is an Object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Object, otherwise false
+ */
+function isObject(val) {
+  return val !== null && typeof val === 'object';
+}
+
+/**
+ * Determine if a value is a Date
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Date, otherwise false
+ */
+function isDate(val) {
+  return toString.call(val) === '[object Date]';
+}
+
+/**
+ * Determine if a value is a File
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a File, otherwise false
+ */
+function isFile(val) {
+  return toString.call(val) === '[object File]';
+}
+
+/**
+ * Determine if a value is a Blob
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Blob, otherwise false
+ */
+function isBlob(val) {
+  return toString.call(val) === '[object Blob]';
+}
+
+/**
+ * Determine if a value is a Function
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Function, otherwise false
+ */
+function isFunction(val) {
+  return toString.call(val) === '[object Function]';
+}
+
+/**
+ * Determine if a value is a Stream
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Stream, otherwise false
+ */
+function isStream(val) {
+  return isObject(val) && isFunction(val.pipe);
+}
+
+/**
+ * Determine if a value is a URLSearchParams object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a URLSearchParams object, otherwise false
+ */
+function isURLSearchParams(val) {
+  return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
+}
+
+/**
+ * Trim excess whitespace off the beginning and end of a string
+ *
+ * @param {String} str The String to trim
+ * @returns {String} The String freed of excess whitespace
+ */
+function trim(str) {
+  return str.replace(/^\s*/, '').replace(/\s*$/, '');
+}
+
+/**
+ * Determine if we're running in a standard browser environment
+ *
+ * This allows axios to run in a web worker, and react-native.
+ * Both environments support XMLHttpRequest, but not fully standard globals.
+ *
+ * web workers:
+ *  typeof window -> undefined
+ *  typeof document -> undefined
+ *
+ * react-native:
+ *  navigator.product -> 'ReactNative'
+ */
+function isStandardBrowserEnv() {
+  if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
+    return false;
+  }
+  return (
+    typeof window !== 'undefined' &&
+    typeof document !== 'undefined'
+  );
+}
+
+/**
+ * Iterate over an Array or an Object invoking a function for each item.
+ *
+ * If `obj` is an Array callback will be called passing
+ * the value, index, and complete array for each item.
+ *
+ * If 'obj' is an Object callback will be called passing
+ * the value, key, and complete object for each property.
+ *
+ * @param {Object|Array} obj The object to iterate
+ * @param {Function} fn The callback to invoke for each item
+ */
+function forEach(obj, fn) {
+  // Don't bother if no value provided
+  if (obj === null || typeof obj === 'undefined') {
+    return;
+  }
+
+  // Force an array if not already something iterable
+  if (typeof obj !== 'object') {
+    /*eslint no-param-reassign:0*/
+    obj = [obj];
+  }
+
+  if (isArray(obj)) {
+    // Iterate over array values
+    for (var i = 0, l = obj.length; i < l; i++) {
+      fn.call(null, obj[i], i, obj);
+    }
+  } else {
+    // Iterate over object keys
+    for (var key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        fn.call(null, obj[key], key, obj);
+      }
+    }
+  }
+}
+
+/**
+ * Accepts varargs expecting each argument to be an object, then
+ * immutably merges the properties of each object and returns result.
+ *
+ * When multiple objects contain the same key the later object in
+ * the arguments list will take precedence.
+ *
+ * Example:
+ *
+ * ```js
+ * var result = merge({foo: 123}, {foo: 456});
+ * console.log(result.foo); // outputs 456
+ * ```
+ *
+ * @param {Object} obj1 Object to merge
+ * @returns {Object} Result of all merge properties
+ */
+function merge(/* obj1, obj2, obj3, ... */) {
+  var result = {};
+  function assignValue(val, key) {
+    if (typeof result[key] === 'object' && typeof val === 'object') {
+      result[key] = merge(result[key], val);
+    } else {
+      result[key] = val;
+    }
+  }
+
+  for (var i = 0, l = arguments.length; i < l; i++) {
+    forEach(arguments[i], assignValue);
+  }
+  return result;
+}
+
+/**
+ * Extends object a by mutably adding to it the properties of object b.
+ *
+ * @param {Object} a The object to be extended
+ * @param {Object} b The object to copy properties from
+ * @param {Object} thisArg The object to bind function to
+ * @return {Object} The resulting value of object a
+ */
+function extend(a, b, thisArg) {
+  forEach(b, function assignValue(val, key) {
+    if (thisArg && typeof val === 'function') {
+      a[key] = bind(val, thisArg);
+    } else {
+      a[key] = val;
+    }
+  });
+  return a;
+}
+
+module.exports = {
+  isArray: isArray,
+  isArrayBuffer: isArrayBuffer,
+  isBuffer: isBuffer,
+  isFormData: isFormData,
+  isArrayBufferView: isArrayBufferView,
+  isString: isString,
+  isNumber: isNumber,
+  isObject: isObject,
+  isUndefined: isUndefined,
+  isDate: isDate,
+  isFile: isFile,
+  isBlob: isBlob,
+  isFunction: isFunction,
+  isStream: isStream,
+  isURLSearchParams: isURLSearchParams,
+  isStandardBrowserEnv: isStandardBrowserEnv,
+  forEach: forEach,
+  merge: merge,
+  extend: extend,
+  trim: trim
+};
+
+
+/***/ }),
+/* 2 */
+/*!**************************************************************!*\
+  !*** ../node_modules/@wix/web-bi-logger/dist/src/lib/env.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.setHost = setHost;
+exports.getHost = getHost;
+exports.isWebWorker = isWebWorker;
+exports.provideBrowsingContext = provideBrowsingContext;
+var host = 'frog.wix.com';
+
+function setHost(_host) {
+  host = _host;
+}
+
+function getHost() {
+  return host;
+}
+
+function isWebWorker() {
+  /* global WorkerGlobalScope */
+
+  //At the moment, this is the most reliable way of detecting if current code is run in a worker
+  //Taken from here: https://stackoverflow.com/a/18002694
+  return typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope;
+}
+
+/**
+ * Provides a window object to the callback iff current window is the topmost one
+ * Otherwise returns null
+ */
+function provideBrowsingContext(cb) {
+  if (typeof window !== 'undefined' && window) {
+    try {
+      return window.top === window.self ? cb ? cb(window) : window : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  return null;
+}
+
+/***/ }),
+/* 3 */
+/*!******************************************!*\
+  !*** ../node_modules/fbemitter/index.js ***!
+  \******************************************/
+/*! no static exports found */
+/*! exports used: EventEmitter */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+var fbemitter = {
+  EventEmitter: __webpack_require__(/*! ./lib/BaseEventEmitter */ 30),
+  EmitterSubscription : __webpack_require__(/*! ./lib/EmitterSubscription */ 10)
+};
+
+module.exports = fbemitter;
+
+
+/***/ }),
+/* 4 */
+/*!*********************************************!*\
+  !*** ../node_modules/axios/lib/defaults.js ***!
+  \*********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+var utils = __webpack_require__(/*! ./utils */ 1);
+var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ 46);
+
+var DEFAULT_CONTENT_TYPE = {
+  'Content-Type': 'application/x-www-form-urlencoded'
+};
+
+function setContentTypeIfUnset(headers, value) {
+  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
+    headers['Content-Type'] = value;
+  }
+}
+
+function getDefaultAdapter() {
+  var adapter;
+  if (typeof XMLHttpRequest !== 'undefined') {
+    // For browsers use XHR adapter
+    adapter = __webpack_require__(/*! ./adapters/xhr */ 13);
+  } else if (typeof process !== 'undefined') {
+    // For node use HTTP adapter
+    adapter = __webpack_require__(/*! ./adapters/http */ 13);
+  }
+  return adapter;
+}
+
+var defaults = {
+  adapter: getDefaultAdapter(),
+
+  transformRequest: [function transformRequest(data, headers) {
+    normalizeHeaderName(headers, 'Content-Type');
+    if (utils.isFormData(data) ||
+      utils.isArrayBuffer(data) ||
+      utils.isBuffer(data) ||
+      utils.isStream(data) ||
+      utils.isFile(data) ||
+      utils.isBlob(data)
+    ) {
+      return data;
+    }
+    if (utils.isArrayBufferView(data)) {
+      return data.buffer;
+    }
+    if (utils.isURLSearchParams(data)) {
+      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
+      return data.toString();
+    }
+    if (utils.isObject(data)) {
+      setContentTypeIfUnset(headers, 'application/json;charset=utf-8');
+      return JSON.stringify(data);
+    }
+    return data;
+  }],
+
+  transformResponse: [function transformResponse(data) {
+    /*eslint no-param-reassign:0*/
+    if (typeof data === 'string') {
+      try {
+        data = JSON.parse(data);
+      } catch (e) { /* Ignore */ }
+    }
+    return data;
+  }],
+
+  /**
+   * A timeout in milliseconds to abort a request. If set to 0 (default) a
+   * timeout is not created.
+   */
+  timeout: 0,
+
+  xsrfCookieName: 'XSRF-TOKEN',
+  xsrfHeaderName: 'X-XSRF-TOKEN',
+
+  maxContentLength: -1,
+
+  validateStatus: function validateStatus(status) {
+    return status >= 200 && status < 300;
+  }
+};
+
+defaults.headers = {
+  common: {
+    'Accept': 'application/json, text/plain, */*'
+  }
+};
+
+utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
+  defaults.headers[method] = {};
+});
+
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
+});
+
+module.exports = defaults;
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node-libs-browser/node_modules/process/browser.js */ 45)))
+
+/***/ }),
+/* 5 */
+/*!******************!*\
+  !*** ./types.ts ***!
+  \******************/
+/*! no static exports found */
+/*! exports used: OpenerEvent, OpenerEventClosed */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 6 */
+/*!***********************************************************!*\
+  !*** ../node_modules/wix-bi-logger-client/dist/assert.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AssertionError = function (_Error) {
+  _inherits(AssertionError, _Error);
+
+  function AssertionError(message) {
+    _classCallCheck(this, AssertionError);
+
+    var _this = _possibleConstructorReturn(this, (AssertionError.__proto__ || Object.getPrototypeOf(AssertionError)).call(this, message));
+
+    _this.name = _this.constructor.name;
+    return _this;
+  }
+
+  return AssertionError;
+}(Error);
+
+function assertDefined(target, message) {
+  if (target === undefined) {
+    throw new AssertionError(message);
+  }
+}
+
+function assertObject(target, message) {
+  if (target !== undefined && ((typeof target === 'undefined' ? 'undefined' : _typeof(target)) !== 'object' || Array.isArray(target) || target === null)) {
+    throw new AssertionError(message);
+  }
+}
+
+function assertOk(target, message) {
+  if (!target) {
+    throw new AssertionError(message);
+  }
+}
+
+module.exports.defined = assertDefined;
+module.exports.object = assertObject;
+module.exports.ok = assertOk;
+module.exports.AssertionError = AssertionError;
+//# sourceMappingURL=assert.js.map
+
+/***/ }),
+/* 7 */
+/*!**************************************************************!*\
+  !*** ../node_modules/wix-bi-logger-client/dist/bi-logger.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var assert = __webpack_require__(/*! ./assert */ 6);
+
+var _require = __webpack_require__(/*! ./utils/collections */ 22),
+    mapValues = _require.mapValues;
+
+var promise = __webpack_require__(/*! ./utils/promise */ 23);
+
+var _require2 = __webpack_require__(/*! ./utils/log */ 24),
+    log = _require2.log;
+
+var BiLogger = function () {
+  //TODO: validate args
+  function BiLogger(options, context) {
+    _classCallCheck(this, BiLogger);
+
+    this._publishers = options.publishers;
+    this._validators = options.validators || [];
+    this._defaults = options.defaults;
+    this._events = options.events || {};
+    this._context = context;
+    this._defaultValueTimeout = options.defaultValueTimeout || 5000;
+    this._defaultContinueOnFail = options.defaultContinueOnFail || false;
+    this._onPublisherFailHandler = options.onPublisherFailHandler || BiLogger._defaultPublisherFailHandler;
+  }
+
+  _createClass(BiLogger, [{
+    key: 'log',
+    value: function log(eventOrKey, eventOrUndefined) {
+      var _this = this;
+
+      assert.defined(eventOrKey, 'Event object or event key must be provided.');
+      var event = this._eventOrExtractFromEvents(eventOrKey, eventOrUndefined);
+
+      return this._getDefaults().then(function (defaults) {
+        var fullEvent = Object.assign({}, defaults, event);
+
+        var validatorsResult = _this._validators.length === 0 ? true : _this._validators.some(function (validator) {
+          return validator.match(fullEvent) && (validator.execute(fullEvent) || true);
+        });
+
+        if (!validatorsResult) {
+          throw new Error('No validator accepted the event. Source: ' + fullEvent.src + ' Evid: ' + (fullEvent.evid || fullEvent.evtId));
+        }
+
+        return Promise.all(_this._publishers.map(function (publisher) {
+          var cloned = Object.assign({}, fullEvent);
+
+          return Promise.resolve().then(function () {
+            return publisher(cloned, _this._context);
+          }).catch(function (error) {
+            return _this._onPublisherFailHandler(error, { publisherName: publisher.name });
+          });
+        })).then(function () {
+          return undefined;
+        });
+      });
+    }
+  }, {
+    key: '_eventOrExtractFromEvents',
+    value: function _eventOrExtractFromEvents(eventOrKey, eventOrUndefined) {
+      if (typeof eventOrKey !== 'string') {
+        return eventOrKey;
+      }
+      var event = this._events[eventOrKey];
+      if (!event) {
+        throw new assert.AssertionError('Event with key \'' + eventOrKey + '\' not found in event map.');
+      }
+
+      if (eventOrUndefined) {
+        return Object.assign({}, event, eventOrUndefined);
+      } else {
+        return event;
+      }
+    }
+  }, {
+    key: '_handleDefaultsError',
+    value: function _handleDefaultsError(err) {
+      if (this._defaultContinueOnFail) {
+        log.error(err);
+        return null;
+      }
+      return Promise.reject(err);
+    }
+  }, {
+    key: '_getDefaults',
+    value: function _getDefaults() {
+      var _this2 = this;
+
+      if (!this._defaults) {
+        return Promise.resolve({});
+      }
+
+      var promises = mapValues(this._defaults, function (value, key) {
+        if (typeof value === 'function') {
+          try {
+            value = value();
+          } catch (err) {
+            return _this2._handleDefaultsError(err);
+          }
+        }
+        if (value && typeof value.then !== 'function') {
+          return value;
+        }
+        return promise.timedPromise(value, {
+          message: 'Cannot get default value \'' + key + ' for BI Event\'',
+          timeout: _this2._defaultValueTimeout
+        }).catch(function (err) {
+          return _this2._handleDefaultsError(err);
+        });
+      });
+
+      return promise.allAsObject(promises);
+    }
+  }], [{
+    key: '_defaultPublisherFailHandler',
+    value: function _defaultPublisherFailHandler(error, _ref) {
+      var publisherName = _ref.publisherName;
+
+      log.error('Publisher \'' + publisherName + '\' failed with error: \'' + (error && error.message) + '\'', error);
+    }
+  }]);
+
+  return BiLogger;
+}();
+
+module.exports = BiLogger;
+//# sourceMappingURL=bi-logger.js.map
+
+/***/ }),
+/* 8 */
+/*!************************************************************!*\
+  !*** ../node_modules/@wix/web-bi-logger/dist/src/utils.js ***!
+  \************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.buildUrl = buildUrl;
+exports.guid = guid;
+
+var _performance = __webpack_require__(/*! ./lib/performance */ 26);
+
+var _env = __webpack_require__(/*! ./lib/env */ 2);
+
+var DEFAULT_ENDPOINT = '';
+
+var cacheKillerCounter = 0;
+
+function addParam(url, key, value) {
+  var separator = url.indexOf('?') === -1 ? '?' : '&';
+  return '' + url + separator + encodeURIComponent(key) + '=' + encodeURIComponent(value);
+}
+
+function buildUrl(_ref, params) {
+  var host = _ref.host,
+      _ref$endpoint = _ref.endpoint,
+      endpoint = _ref$endpoint === undefined ? DEFAULT_ENDPOINT : _ref$endpoint;
+  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+  host = host || (0, _env.getHost)();
+  endpoint = context.endpoint || endpoint;
+
+  params._ = '' + new Date().getTime() + cacheKillerCounter++;
+  params.ms = Math.round((0, _performance.now)());
+
+  var prefix = '//' + host + '/' + endpoint;
+  return Object.keys(params).reduce(function (url, key) {
+    return addParam(url, key, params[key]);
+  }, prefix);
+}
+
+function guid() {
+  /*eslint-disable */
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+    var r = Math.random() * 16 | 0;
+    var v = c === 'x' ? r : r & 0x3 | 0x8;
+    return v.toString(16);
+  });
+  /*eslint-enable */
+}
+
+/***/ }),
+/* 9 */
+/*!********************************************************************!*\
+  !*** ../node_modules/@wix/web-bi-logger/dist/src/lib/navigator.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.listen = listen;
+exports.sendBeacon = sendBeacon;
+
+var _env = __webpack_require__(/*! ./env */ 2);
+
+function hook(obj, fnName, hook) {
+  if (!obj || !obj[fnName]) {
+    return;
+  }
+
+  var original = obj[fnName];
+  obj[fnName] = function () {
+    hook.apply(null, arguments);
+    return original.apply(obj, arguments);
+  };
+}
+
+function onLoad(cb) {
+  setTimeout(function () {
+    return (0, _env.provideBrowsingContext)(function (window) {
+      return cb(window.location.href);
+    });
+  });
+}
+
+function onPushState(cb) {
+  (0, _env.provideBrowsingContext)(function (_ref) {
+    var history = _ref.history;
+    return ['pushState', 'replaceState'].forEach(function (fnName) {
+      hook(history, fnName, function (_, __, url) {
+        return cb(url);
+      });
+    });
+  });
+}
+
+function onPopState(cb) {
+  (0, _env.provideBrowsingContext)(function (window) {
+    return window.addEventListener('popstate', function () {
+      return cb(window.location.href);
+    });
+  });
+}
+
+function listen(cb) {
+  (0, _env.provideBrowsingContext)(function (window) {
+    var fromUrl = window.document.referrer;
+
+    [onLoad, onPushState, onPopState].forEach(function (event) {
+      return event(function (toUrl) {
+        cb(fromUrl, toUrl);
+        fromUrl = toUrl;
+      });
+    });
+  });
+}
+
+function sendBeacon(url) {
+  if (typeof navigator === 'undefined' || !navigator || !navigator.sendBeacon) {
+    return false;
+  }
+
+  return navigator.sendBeacon(url);
+}
+
+/***/ }),
+/* 10 */
+/*!************************************************************!*\
+  !*** ../node_modules/fbemitter/lib/EmitterSubscription.js ***!
+  \************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ * 
+ * @providesModule EmitterSubscription
+ * @typechecks
+ */
+
+
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var EventSubscription = __webpack_require__(/*! ./EventSubscription */ 31);
+
+/**
+ * EmitterSubscription represents a subscription with listener and context data.
+ */
+
+var EmitterSubscription = (function (_EventSubscription) {
+  _inherits(EmitterSubscription, _EventSubscription);
+
+  /**
+   * @param {EventSubscriptionVendor} subscriber - The subscriber that controls
+   *   this subscription
+   * @param {function} listener - Function to invoke when the specified event is
+   *   emitted
+   * @param {*} context - Optional context object to use when invoking the
+   *   listener
+   */
+
+  function EmitterSubscription(subscriber, listener, context) {
+    _classCallCheck(this, EmitterSubscription);
+
+    _EventSubscription.call(this, subscriber);
+    this.listener = listener;
+    this.context = context;
+  }
+
+  return EmitterSubscription;
+})(EventSubscription);
+
+module.exports = EmitterSubscription;
+
+/***/ }),
+/* 11 */
+/*!*********************************************!*\
+  !*** ../node_modules/fbjs/lib/invariant.js ***!
+  \*********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+
+
+
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
+var validateFormat = function validateFormat(format) {};
+
+if (false) {}
+
+function invariant(condition, format, a, b, c, d, e, f) {
+  validateFormat(format);
+
+  if (!condition) {
+    var error;
+    if (format === undefined) {
+      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
+    } else {
+      var args = [a, b, c, d, e, f];
+      var argIndex = 0;
+      error = new Error(format.replace(/%s/g, function () {
+        return args[argIndex++];
+      }));
+      error.name = 'Invariant Violation';
+    }
+
+    error.framesToPop = 1; // we don't care about invariant's own frame
+    throw error;
+  }
+}
+
+module.exports = invariant;
+
+/***/ }),
+/* 12 */
+/*!*************************************************!*\
+  !*** ../node_modules/axios/lib/helpers/bind.js ***!
+  \*************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function bind(fn, thisArg) {
+  return function wrap() {
+    var args = new Array(arguments.length);
+    for (var i = 0; i < args.length; i++) {
+      args[i] = arguments[i];
+    }
+    return fn.apply(thisArg, args);
+  };
+};
+
+
+/***/ }),
+/* 13 */
+/*!*************************************************!*\
+  !*** ../node_modules/axios/lib/adapters/xhr.js ***!
+  \*************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./../utils */ 1);
+var settle = __webpack_require__(/*! ./../core/settle */ 47);
+var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ 49);
+var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ 50);
+var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ 51);
+var createError = __webpack_require__(/*! ../core/createError */ 14);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(/*! ./../helpers/btoa */ 52);
+
+module.exports = function xhrAdapter(config) {
+  return new Promise(function dispatchXhrRequest(resolve, reject) {
+    var requestData = config.data;
+    var requestHeaders = config.headers;
+
+    if (utils.isFormData(requestData)) {
+      delete requestHeaders['Content-Type']; // Let the browser set it
+    }
+
+    var request = new XMLHttpRequest();
+    var loadEvent = 'onreadystatechange';
+    var xDomain = false;
+
+    // For IE 8/9 CORS support
+    // Only supports POST and GET calls and doesn't returns the response headers.
+    // DON'T do this for testing b/c XMLHttpRequest is mocked, not XDomainRequest.
+    if ("production" !== 'test' &&
+        typeof window !== 'undefined' &&
+        window.XDomainRequest && !('withCredentials' in request) &&
+        !isURLSameOrigin(config.url)) {
+      request = new window.XDomainRequest();
+      loadEvent = 'onload';
+      xDomain = true;
+      request.onprogress = function handleProgress() {};
+      request.ontimeout = function handleTimeout() {};
+    }
+
+    // HTTP basic authentication
+    if (config.auth) {
+      var username = config.auth.username || '';
+      var password = config.auth.password || '';
+      requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
+    }
+
+    request.open(config.method.toUpperCase(), buildURL(config.url, config.params, config.paramsSerializer), true);
+
+    // Set the request timeout in MS
+    request.timeout = config.timeout;
+
+    // Listen for ready state
+    request[loadEvent] = function handleLoad() {
+      if (!request || (request.readyState !== 4 && !xDomain)) {
+        return;
+      }
+
+      // The request errored out and we didn't get a response, this will be
+      // handled by onerror instead
+      // With one exception: request that using file: protocol, most browsers
+      // will return status as 0 even though it's a successful request
+      if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
+        return;
+      }
+
+      // Prepare the response
+      var responseHeaders = 'getAllResponseHeaders' in request ? parseHeaders(request.getAllResponseHeaders()) : null;
+      var responseData = !config.responseType || config.responseType === 'text' ? request.responseText : request.response;
+      var response = {
+        data: responseData,
+        // IE sends 1223 instead of 204 (https://github.com/axios/axios/issues/201)
+        status: request.status === 1223 ? 204 : request.status,
+        statusText: request.status === 1223 ? 'No Content' : request.statusText,
+        headers: responseHeaders,
+        config: config,
+        request: request
+      };
+
+      settle(resolve, reject, response);
+
+      // Clean up request
+      request = null;
+    };
+
+    // Handle low level network errors
+    request.onerror = function handleError() {
+      // Real errors are hidden from us by the browser
+      // onerror should only fire if it's a network error
+      reject(createError('Network Error', config, null, request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Handle timeout
+    request.ontimeout = function handleTimeout() {
+      reject(createError('timeout of ' + config.timeout + 'ms exceeded', config, 'ECONNABORTED',
+        request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Add xsrf header
+    // This is only done if running in a standard browser environment.
+    // Specifically not if we're in a web worker, or react-native.
+    if (utils.isStandardBrowserEnv()) {
+      var cookies = __webpack_require__(/*! ./../helpers/cookies */ 53);
+
+      // Add xsrf header
+      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
+          cookies.read(config.xsrfCookieName) :
+          undefined;
+
+      if (xsrfValue) {
+        requestHeaders[config.xsrfHeaderName] = xsrfValue;
+      }
+    }
+
+    // Add headers to the request
+    if ('setRequestHeader' in request) {
+      utils.forEach(requestHeaders, function setRequestHeader(val, key) {
+        if (typeof requestData === 'undefined' && key.toLowerCase() === 'content-type') {
+          // Remove Content-Type if data is undefined
+          delete requestHeaders[key];
+        } else {
+          // Otherwise add header to the request
+          request.setRequestHeader(key, val);
+        }
+      });
+    }
+
+    // Add withCredentials to request if needed
+    if (config.withCredentials) {
+      request.withCredentials = true;
+    }
+
+    // Add responseType to request if needed
+    if (config.responseType) {
+      try {
+        request.responseType = config.responseType;
+      } catch (e) {
+        // Expected DOMException thrown by browsers not compatible XMLHttpRequest Level 2.
+        // But, this can be suppressed for 'json' type as it can be parsed by default 'transformResponse' function.
+        if (config.responseType !== 'json') {
+          throw e;
+        }
+      }
+    }
+
+    // Handle progress if needed
+    if (typeof config.onDownloadProgress === 'function') {
+      request.addEventListener('progress', config.onDownloadProgress);
+    }
+
+    // Not all browsers support upload events
+    if (typeof config.onUploadProgress === 'function' && request.upload) {
+      request.upload.addEventListener('progress', config.onUploadProgress);
+    }
+
+    if (config.cancelToken) {
+      // Handle cancellation
+      config.cancelToken.promise.then(function onCanceled(cancel) {
+        if (!request) {
+          return;
+        }
+
+        request.abort();
+        reject(cancel);
+        // Clean up request
+        request = null;
+      });
+    }
+
+    if (requestData === undefined) {
+      requestData = null;
+    }
+
+    // Send the request
+    request.send(requestData);
+  });
+};
+
+
+/***/ }),
+/* 14 */
+/*!*****************************************************!*\
+  !*** ../node_modules/axios/lib/core/createError.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var enhanceError = __webpack_require__(/*! ./enhanceError */ 48);
+
+/**
+ * Create an Error with the specified message, config, error code, request and response.
+ *
+ * @param {string} message The error message.
+ * @param {Object} config The config.
+ * @param {string} [code] The error code (for example, 'ECONNABORTED').
+ * @param {Object} [request] The request.
+ * @param {Object} [response] The response.
+ * @returns {Error} The created error.
+ */
+module.exports = function createError(message, config, code, request, response) {
+  var error = new Error(message);
+  return enhanceError(error, config, code, request, response);
+};
+
+
+/***/ }),
+/* 15 */
+/*!****************************************************!*\
+  !*** ../node_modules/axios/lib/cancel/isCancel.js ***!
+  \****************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function isCancel(value) {
+  return !!(value && value.__CANCEL__);
+};
+
+
+/***/ }),
+/* 16 */
+/*!**************************************************!*\
+  !*** ../node_modules/axios/lib/cancel/Cancel.js ***!
+  \**************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * A `Cancel` is an object that is thrown when an operation is canceled.
+ *
+ * @class
+ * @param {string=} message The message.
+ */
+function Cancel(message) {
+  this.message = message;
+}
+
+Cancel.prototype.toString = function toString() {
+  return 'Cancel' + (this.message ? ': ' + this.message : '');
+};
+
+Cancel.prototype.__CANCEL__ = true;
+
+module.exports = Cancel;
+
+
+/***/ }),
+/* 17 */
+/*!*************************************************************!*\
+  !*** ../node_modules/@wix/web-bi-logger/dist/src/logger.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _wixBiLoggerClient = __webpack_require__(/*! wix-bi-logger-client */ 20);
+
+var _browsingSession = __webpack_require__(/*! ./browsingSession */ 25);
+
+var browsingSession = _interopRequireWildcard(_browsingSession);
+
+var _env = __webpack_require__(/*! ./lib/env */ 2);
+
+var _publishers = __webpack_require__(/*! ./lib/publishers */ 28);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function getPublisher() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  var publisher = void 0;
+
+  if ((0, _env.isWebWorker)()) {
+    publisher = _publishers.fetchPublisher;
+  } else if (options.useBeacon) {
+    publisher = _publishers.beaconPublisher;
+  } else {
+    publisher = _publishers.imagePublisher;
+  }
+
+  return publisher(options);
+}
+
+var _factory = function _factory(options) {
+  return new _wixBiLoggerClient.BiLoggerFactory().addPublisher(getPublisher(options));
+};
+
+var logger = {
+  factory: function factory() {
+    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+    var trackSession = options.trackSession || typeof options.trackSession === 'undefined';
+
+    if (trackSession) {
+      browsingSession.track(_factory);
+    }
+
+    return _factory(options);
+  },
+  setHost: _env.setHost
+};
+
+exports.default = logger;
+
+/***/ }),
+/* 18 */
+/*!****************************!*\
+  !*** ./iframe/iframe.scss ***!
+  \****************************/
+/*! no static exports found */
+/*! exports used: uiFeedback */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../node_modules/css-loader??ref--13-1!../../node_modules/postcss-loader/lib??ref--13-2!../../node_modules/resolve-url-loader??ref--13-3!../../node_modules/sass-loader/lib/loader.js??ref--13-4!./iframe.scss */ 34);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"singleton":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ 36)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {}
+
+/***/ }),
+/* 19 */
+/*!**************************************!*\
+  !*** ../node_modules/axios/index.js ***!
+  \**************************************/
+/*! no static exports found */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./lib/axios */ 42);
+
+/***/ }),
+/* 20 */
+/*!**********************************************************!*\
+  !*** ../node_modules/wix-bi-logger-client/dist/index.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var BiLoggerClientFactory = __webpack_require__(/*! ./bi-logger-factory */ 21);
+var BiLogger = __webpack_require__(/*! ./bi-logger */ 7);
+
+module.exports.BiLoggerFactory = BiLoggerClientFactory;
+module.exports.BiLogger = BiLogger;
+
+module.exports.factory = function () {
+  return new BiLoggerClientFactory();
+};
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 21 */
+/*!**********************************************************************!*\
+  !*** ../node_modules/wix-bi-logger-client/dist/bi-logger-factory.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var assert = __webpack_require__(/*! ./assert */ 6);
+var BiLogger = __webpack_require__(/*! ./bi-logger */ 7);
+
+var BiLoggerFactory = function () {
+  function BiLoggerFactory() {
+    _classCallCheck(this, BiLoggerFactory);
+
+    this._publishers = [];
+    this._validators = [];
+    this._defaults = {};
+    this._events = {};
+  }
+
+  _createClass(BiLoggerFactory, [{
+    key: 'addPublisher',
+    value: function addPublisher(publisher) {
+      assert.defined(publisher, 'Publisher must be provided');
+      assert.ok(typeof publisher === 'function', 'Expected a publisher function');
+      this._publishers.push(publisher);
+      return this;
+    }
+  }, {
+    key: 'addValidator',
+    value: function addValidator(validator) {
+      assert.defined(validator, 'Validator must be provided');
+      assert.ok((typeof validator === 'undefined' ? 'undefined' : _typeof(validator)) === 'object' && validator, 'Expected a validator object');
+      assert.ok(validator.execute && validator.match, 'Provided validator does not match the interface');
+      this._validators.push(validator);
+      return this;
+    }
+  }, {
+    key: 'setDefaults',
+    value: function setDefaults(defaults) {
+      assert.defined(defaults, 'Defaults must be provided');
+      assert.object(defaults, 'Defaults must be an object');
+      this._defaults = defaults;
+      return this;
+    }
+  }, {
+    key: 'updateDefaults',
+    value: function updateDefaults(defaults) {
+      assert.defined(defaults, 'Defaults must be provided');
+      assert.object(defaults, 'Defaults must be an object');
+      Object.assign(this._defaults, defaults);
+      return this;
+    }
+  }, {
+    key: 'setEvents',
+    value: function setEvents(events) {
+      assert.defined(events, 'Events must be provided');
+      assert.object(events, 'Events must be an object');
+      this._events = events;
+      return this;
+    }
+  }, {
+    key: 'setDefaultValueTimeout',
+    value: function setDefaultValueTimeout(defaultValueTimeout) {
+      assert.defined(defaultValueTimeout, 'Default Value Timeout must be provided');
+      this._defaultValueTimeout = defaultValueTimeout;
+      return this;
+    }
+  }, {
+    key: 'setDefaultContinueOnFail',
+    value: function setDefaultContinueOnFail(defaultContinueOnFail) {
+      assert.defined(defaultContinueOnFail, 'Default Continue On Fail must be provided');
+      this._defaultContinueOnFail = defaultContinueOnFail;
+      return this;
+    }
+  }, {
+    key: 'setPublisherFailHandler',
+    value: function setPublisherFailHandler(onPublisherFailHandler) {
+      assert.defined(onPublisherFailHandler, 'Publisher Fail Handler must be provided');
+      this._onPublisherFailHandler = onPublisherFailHandler;
+      return this;
+    }
+  }, {
+    key: 'logger',
+    value: function logger(context) {
+      return new BiLogger({
+        publishers: this._publishers,
+        validators: this._validators,
+        defaults: this._defaults,
+        events: this._events,
+        defaultValueTimeout: this._defaultValueTimeout,
+        defaultContinueOnFail: this._defaultContinueOnFail,
+        onPublisherFailHandler: this._onPublisherFailHandler
+      }, context);
+    }
+  }]);
+
+  return BiLoggerFactory;
+}();
+
+module.exports = BiLoggerFactory;
+//# sourceMappingURL=bi-logger-factory.js.map
+
+/***/ }),
+/* 22 */
+/*!**********************************************************************!*\
+  !*** ../node_modules/wix-bi-logger-client/dist/utils/collections.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * This callback type is called `requestCallback` and is displayed as a global symbol.
+ *
+ * @callback iterateeCallback
+ * @param {*} Value
+ * @param {string} Key
+ * @param {object} Original object
+ */
+/**
+ * Iterates over object values
+ * @param {Object} collection
+ * @param {iterateeCallback} iteratee
+ * @return {Object} iterated object
+ */
+module.exports.mapValues = function (collection, iteratee) {
+  if (!collection) {
+    return {};
+  }
+  return Object.keys(collection).reduce(function (acc, key) {
+    acc[key] = iteratee(collection[key], key, collection);
+    return acc;
+  }, {});
+};
+//# sourceMappingURL=collections.js.map
+
+/***/ }),
+/* 23 */
+/*!******************************************************************!*\
+  !*** ../node_modules/wix-bi-logger-client/dist/utils/promise.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * rejects original promise after specified timeout
+ * @param {Promise<R>} promise Original promise
+ * @param {string} [message] Additional message for timeout reject
+ * @param {number} timeout Time for reject
+ * @return {Promise<R>}
+ */
+module.exports.timedPromise = function (promise, _ref) {
+  var message = _ref.message,
+      timeout = _ref.timeout;
+
+  var timeoutPromise = new Promise(function (resolve, reject) {
+    setTimeout(reject, timeout, message ? 'Timeout: ' + message : 'Timeout');
+  });
+  return Promise.race([promise, timeoutPromise]);
+};
+
+/**
+ * Works like Promise.all expect uses object insetead of array.
+ * @param {Object} promiseObject
+ * @return {Promise} Promise wiht original keys and resolved values
+ */
+module.exports.allAsObject = function (promiseObject) {
+  var keys = Object.keys(promiseObject);
+  return Promise.all(keys.map(function (key) {
+    return promiseObject[key];
+  })).then(function (resolved) {
+    return resolved.reduce(function (acc, value, i) {
+      acc[keys[i]] = value;
+      return acc;
+    }, {});
+  });
+};
+//# sourceMappingURL=promise.js.map
+
+/***/ }),
+/* 24 */
+/*!**************************************************************!*\
+  !*** ../node_modules/wix-bi-logger-client/dist/utils/log.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports.log = {
+  error: function error() {
+    if (console && console.error) {
+      var _console;
+
+      (_console = console).error.apply(_console, arguments);
+    }
+  }
+};
+//# sourceMappingURL=log.js.map
+
+/***/ }),
+/* 25 */
+/*!**********************************************************************!*\
+  !*** ../node_modules/@wix/web-bi-logger/dist/src/browsingSession.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.track = track;
+
+var _utils = __webpack_require__(/*! ./utils */ 8);
+
+var _navigator = __webpack_require__(/*! ./lib/navigator */ 9);
+
+var _env = __webpack_require__(/*! ./lib/env */ 2);
+
+var _screen = __webpack_require__(/*! ./lib/screen */ 27);
+
+var IS_TRACKING = '__isTrackingBiBrowsingSession__';
+var ENDPOINT = 'p';
+var SOURCE = 19;
+var EVID = 3;
+
+function shouldTrack() {
+  return !(0, _env.isWebWorker)() && (0, _env.provideBrowsingContext)(function (window) {
+    return !window[IS_TRACKING];
+  });
+}
+
+function setIsTracking() {
+  return (0, _env.provideBrowsingContext)(function (window) {
+    return window[IS_TRACKING] = true;
+  });
+}
+
+function getLogger(loggerFactory) {
+  return loggerFactory({ endpoint: ENDPOINT, useBeacon: true }).setDefaults({ src: SOURCE, evid: EVID, vsi: (0, _utils.guid)() }).logger();
+}
+
+function trackBrowsingSession(loggerFactory) {
+  var logger = getLogger(loggerFactory);
+  var firstInSession = 1;
+
+  (0, _navigator.listen)(function (fromUrl, toUrl) {
+    var _provideBrowsingConte = (0, _env.provideBrowsingContext)(function (window) {
+      return { sr: (0, _screen.getDesktopSize)(window), wr: (0, _screen.getWindowSize)(window) };
+    }),
+        sr = _provideBrowsingConte.sr,
+        wr = _provideBrowsingConte.wr;
+
+    logger.log({ from: fromUrl, to: toUrl, fis: firstInSession, sr: sr, wr: wr });
+    firstInSession = 0;
+  });
+}
+
+/**
+ * Sends a page view event on initial load and on every page switch
+ * BI event definition: http://bo.wix.com/bi-catalog-webapp/#/sources/19/events/3
+ */
+function track(loggerFactory) {
+  if (shouldTrack()) {
+    setIsTracking();
+    trackBrowsingSession(loggerFactory);
+  }
+}
+
+/***/ }),
+/* 26 */
+/*!**********************************************************************!*\
+  !*** ../node_modules/@wix/web-bi-logger/dist/src/lib/performance.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.now = now;
+function now() {
+  return typeof performance !== 'undefined' && performance && performance.now ? performance.now() : -1;
+}
+
+/***/ }),
+/* 27 */
+/*!*****************************************************************!*\
+  !*** ../node_modules/@wix/web-bi-logger/dist/src/lib/screen.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getDesktopSize = getDesktopSize;
+exports.getWindowSize = getWindowSize;
+function getDesktopSize(window) {
+  var width = window.screen && window.screen.width || 0;
+  var height = window.screen && window.screen.height || 0;
+
+  return width + "x" + height;
+}
+
+function getWindowSize(window) {
+  var width = 0;
+  var height = 0;
+
+  if (window.innerWidth) {
+    width = window.innerWidth;
+    height = window.innerHeight;
+  } else if (window.document) {
+    if (window.document.documentElement && window.document.documentElement.clientWidth) {
+      width = window.document.documentElement.clientWidth;
+      height = window.document.documentElement.clientHeight;
+    } else if (window.document.body && window.document.body.clientWidth) {
+      width = window.document.body.clientWidth;
+      height = window.document.body.clientHeight;
+    }
+  }
+
+  return width + "x" + height;
+}
+
+/***/ }),
+/* 28 */
+/*!*********************************************************************!*\
+  !*** ../node_modules/@wix/web-bi-logger/dist/src/lib/publishers.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.imagePublisher = imagePublisher;
+exports.beaconPublisher = beaconPublisher;
+exports.fetchPublisher = fetchPublisher;
+
+var _utils = __webpack_require__(/*! ./../utils */ 8);
+
+var _transport = __webpack_require__(/*! ./transport */ 29);
+
+function imagePublisher() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  return function imagePublisher(params) {
+    var context = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    // eslint-disable-line func-names
+    var url = (0, _utils.buildUrl)(options, params, context);
+    return (0, _transport.pixelTransport)(url, context.image);
+  };
+}
+
+function beaconPublisher() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  return function beaconPublisher(params) {
+    var context = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    // eslint-disable-line func-names
+    var url = (0, _utils.buildUrl)(options, params, context);
+    return (0, _transport.beaconTransport)(url).catch(function () {
+      return (0, _transport.pixelTransport)(url, context.image);
+    });
+  };
+}
+
+function fetchPublisher() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  return function fetchPublisher(params) {
+    var context = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    // eslint-disable-line func-names
+    var url = (0, _utils.buildUrl)(options, params, context);
+    return (0, _transport.fetchTransport)(url);
+  };
+}
+
+/***/ }),
+/* 29 */
+/*!********************************************************************!*\
+  !*** ../node_modules/@wix/web-bi-logger/dist/src/lib/transport.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.beaconTransport = beaconTransport;
+exports.pixelTransport = pixelTransport;
+exports.fetchTransport = fetchTransport;
+
+var _navigator = __webpack_require__(/*! ./navigator */ 9);
+
+function beaconTransport(url) {
+  return new Promise(function (resolve, reject) {
+    return (0, _navigator.sendBeacon)(url) ? resolve() : reject(new Error('Transport Error: Cannot send bi using beacons'));
+  });
+}
+
+function pixelTransport(url, image) {
+  return new Promise(function (resolve, reject) {
+    var biImage = image || new window.Image(0, 0);
+    biImage.onload = function () {
+      return resolve();
+    };
+    biImage.onerror = function () {
+      return reject(new Error('Transport Error: Cannot send bi using pixelTransport'));
+    };
+    biImage.src = url;
+  });
+}
+
+function fetchTransport(url) {
+  return fetch(url, { credentials: 'include' }).then(function (response) {
+    if (!response.ok) {
+      throw Error('Transport Error: Cannot send bi using fetch. Status: ' + response.status);
+    }
+  });
+}
+
+/***/ }),
+/* 30 */
+/*!*********************************************************!*\
+  !*** ../node_modules/fbemitter/lib/BaseEventEmitter.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule BaseEventEmitter
+ * @typechecks
+ */
+
+
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+var EmitterSubscription = __webpack_require__(/*! ./EmitterSubscription */ 10);
+var EventSubscriptionVendor = __webpack_require__(/*! ./EventSubscriptionVendor */ 32);
+
+var emptyFunction = __webpack_require__(/*! fbjs/lib/emptyFunction */ 33);
+var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 11);
+
+/**
+ * @class BaseEventEmitter
+ * @description
+ * An EventEmitter is responsible for managing a set of listeners and publishing
+ * events to them when it is told that such events happened. In addition to the
+ * data for the given event it also sends a event control object which allows
+ * the listeners/handlers to prevent the default behavior of the given event.
+ *
+ * The emitter is designed to be generic enough to support all the different
+ * contexts in which one might want to emit events. It is a simple multicast
+ * mechanism on top of which extra functionality can be composed. For example, a
+ * more advanced emitter may use an EventHolder and EventFactory.
+ */
+
+var BaseEventEmitter = (function () {
+  /**
+   * @constructor
+   */
+
+  function BaseEventEmitter() {
+    _classCallCheck(this, BaseEventEmitter);
+
+    this._subscriber = new EventSubscriptionVendor();
+    this._currentSubscription = null;
+  }
+
+  /**
+   * Adds a listener to be invoked when events of the specified type are
+   * emitted. An optional calling context may be provided. The data arguments
+   * emitted will be passed to the listener function.
+   *
+   * TODO: Annotate the listener arg's type. This is tricky because listeners
+   *       can be invoked with varargs.
+   *
+   * @param {string} eventType - Name of the event to listen to
+   * @param {function} listener - Function to invoke when the specified event is
+   *   emitted
+   * @param {*} context - Optional context object to use when invoking the
+   *   listener
+   */
+
+  BaseEventEmitter.prototype.addListener = function addListener(eventType, listener, context) {
+    return this._subscriber.addSubscription(eventType, new EmitterSubscription(this._subscriber, listener, context));
+  };
+
+  /**
+   * Similar to addListener, except that the listener is removed after it is
+   * invoked once.
+   *
+   * @param {string} eventType - Name of the event to listen to
+   * @param {function} listener - Function to invoke only once when the
+   *   specified event is emitted
+   * @param {*} context - Optional context object to use when invoking the
+   *   listener
+   */
+
+  BaseEventEmitter.prototype.once = function once(eventType, listener, context) {
+    var emitter = this;
+    return this.addListener(eventType, function () {
+      emitter.removeCurrentListener();
+      listener.apply(context, arguments);
+    });
+  };
+
+  /**
+   * Removes all of the registered listeners, including those registered as
+   * listener maps.
+   *
+   * @param {?string} eventType - Optional name of the event whose registered
+   *   listeners to remove
+   */
+
+  BaseEventEmitter.prototype.removeAllListeners = function removeAllListeners(eventType) {
+    this._subscriber.removeAllSubscriptions(eventType);
+  };
+
+  /**
+   * Provides an API that can be called during an eventing cycle to remove the
+   * last listener that was invoked. This allows a developer to provide an event
+   * object that can remove the listener (or listener map) during the
+   * invocation.
+   *
+   * If it is called when not inside of an emitting cycle it will throw.
+   *
+   * @throws {Error} When called not during an eventing cycle
+   *
+   * @example
+   *   var subscription = emitter.addListenerMap({
+   *     someEvent: function(data, event) {
+   *       console.log(data);
+   *       emitter.removeCurrentListener();
+   *     }
+   *   });
+   *
+   *   emitter.emit('someEvent', 'abc'); // logs 'abc'
+   *   emitter.emit('someEvent', 'def'); // does not log anything
+   */
+
+  BaseEventEmitter.prototype.removeCurrentListener = function removeCurrentListener() {
+    !!!this._currentSubscription ?  false ? undefined : invariant(false) : undefined;
+    this._subscriber.removeSubscription(this._currentSubscription);
+  };
+
+  /**
+   * Returns an array of listeners that are currently registered for the given
+   * event.
+   *
+   * @param {string} eventType - Name of the event to query
+   * @return {array}
+   */
+
+  BaseEventEmitter.prototype.listeners = function listeners(eventType) /* TODO: Array<EventSubscription> */{
+    var subscriptions = this._subscriber.getSubscriptionsForType(eventType);
+    return subscriptions ? subscriptions.filter(emptyFunction.thatReturnsTrue).map(function (subscription) {
+      return subscription.listener;
+    }) : [];
+  };
+
+  /**
+   * Emits an event of the given type with the given data. All handlers of that
+   * particular type will be notified.
+   *
+   * @param {string} eventType - Name of the event to emit
+   * @param {*} Arbitrary arguments to be passed to each registered listener
+   *
+   * @example
+   *   emitter.addListener('someEvent', function(message) {
+   *     console.log(message);
+   *   });
+   *
+   *   emitter.emit('someEvent', 'abc'); // logs 'abc'
+   */
+
+  BaseEventEmitter.prototype.emit = function emit(eventType) {
+    var subscriptions = this._subscriber.getSubscriptionsForType(eventType);
+    if (subscriptions) {
+      var keys = Object.keys(subscriptions);
+      for (var ii = 0; ii < keys.length; ii++) {
+        var key = keys[ii];
+        var subscription = subscriptions[key];
+        // The subscription may have been removed during this event loop.
+        if (subscription) {
+          this._currentSubscription = subscription;
+          this.__emitToSubscription.apply(this, [subscription].concat(Array.prototype.slice.call(arguments)));
+        }
+      }
+      this._currentSubscription = null;
+    }
+  };
+
+  /**
+   * Provides a hook to override how the emitter emits an event to a specific
+   * subscription. This allows you to set up logging and error boundaries
+   * specific to your environment.
+   *
+   * @param {EmitterSubscription} subscription
+   * @param {string} eventType
+   * @param {*} Arbitrary arguments to be passed to each registered listener
+   */
+
+  BaseEventEmitter.prototype.__emitToSubscription = function __emitToSubscription(subscription, eventType) {
+    var args = Array.prototype.slice.call(arguments, 2);
+    subscription.listener.apply(subscription.context, args);
+  };
+
+  return BaseEventEmitter;
+})();
+
+module.exports = BaseEventEmitter;
+
+/***/ }),
+/* 31 */
+/*!**********************************************************!*\
+  !*** ../node_modules/fbemitter/lib/EventSubscription.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule EventSubscription
+ * @typechecks
+ */
+
+
+
+/**
+ * EventSubscription represents a subscription to a particular event. It can
+ * remove its own subscription.
+ */
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+var EventSubscription = (function () {
+
+  /**
+   * @param {EventSubscriptionVendor} subscriber the subscriber that controls
+   *   this subscription.
+   */
+
+  function EventSubscription(subscriber) {
+    _classCallCheck(this, EventSubscription);
+
+    this.subscriber = subscriber;
+  }
+
+  /**
+   * Removes this subscription from the subscriber that controls it.
+   */
+
+  EventSubscription.prototype.remove = function remove() {
+    if (this.subscriber) {
+      this.subscriber.removeSubscription(this);
+      this.subscriber = null;
+    }
+  };
+
+  return EventSubscription;
+})();
+
+module.exports = EventSubscription;
+
+/***/ }),
+/* 32 */
+/*!****************************************************************!*\
+  !*** ../node_modules/fbemitter/lib/EventSubscriptionVendor.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ * 
+ * @providesModule EventSubscriptionVendor
+ * @typechecks
+ */
+
+
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 11);
+
+/**
+ * EventSubscriptionVendor stores a set of EventSubscriptions that are
+ * subscribed to a particular event type.
+ */
+
+var EventSubscriptionVendor = (function () {
+  function EventSubscriptionVendor() {
+    _classCallCheck(this, EventSubscriptionVendor);
+
+    this._subscriptionsForType = {};
+    this._currentSubscription = null;
+  }
+
+  /**
+   * Adds a subscription keyed by an event type.
+   *
+   * @param {string} eventType
+   * @param {EventSubscription} subscription
+   */
+
+  EventSubscriptionVendor.prototype.addSubscription = function addSubscription(eventType, subscription) {
+    !(subscription.subscriber === this) ?  false ? undefined : invariant(false) : undefined;
+    if (!this._subscriptionsForType[eventType]) {
+      this._subscriptionsForType[eventType] = [];
+    }
+    var key = this._subscriptionsForType[eventType].length;
+    this._subscriptionsForType[eventType].push(subscription);
+    subscription.eventType = eventType;
+    subscription.key = key;
+    return subscription;
+  };
+
+  /**
+   * Removes a bulk set of the subscriptions.
+   *
+   * @param {?string} eventType - Optional name of the event type whose
+   *   registered supscriptions to remove, if null remove all subscriptions.
+   */
+
+  EventSubscriptionVendor.prototype.removeAllSubscriptions = function removeAllSubscriptions(eventType) {
+    if (eventType === undefined) {
+      this._subscriptionsForType = {};
+    } else {
+      delete this._subscriptionsForType[eventType];
+    }
+  };
+
+  /**
+   * Removes a specific subscription. Instead of calling this function, call
+   * `subscription.remove()` directly.
+   *
+   * @param {object} subscription
+   */
+
+  EventSubscriptionVendor.prototype.removeSubscription = function removeSubscription(subscription) {
+    var eventType = subscription.eventType;
+    var key = subscription.key;
+
+    var subscriptionsForType = this._subscriptionsForType[eventType];
+    if (subscriptionsForType) {
+      delete subscriptionsForType[key];
+    }
+  };
+
+  /**
+   * Returns the array of subscriptions that are currently registered for the
+   * given event type.
+   *
+   * Note: This array can be potentially sparse as subscriptions are deleted
+   * from it when they are removed.
+   *
+   * TODO: This returns a nullable array. wat?
+   *
+   * @param {string} eventType
+   * @return {?array}
+   */
+
+  EventSubscriptionVendor.prototype.getSubscriptionsForType = function getSubscriptionsForType(eventType) {
+    return this._subscriptionsForType[eventType];
+  };
+
+  return EventSubscriptionVendor;
+})();
+
+module.exports = EventSubscriptionVendor;
+
+/***/ }),
+/* 33 */
+/*!*************************************************!*\
+  !*** ../node_modules/fbjs/lib/emptyFunction.js ***!
+  \*************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * 
+ */
+
+function makeEmptyFunction(arg) {
+  return function () {
+    return arg;
+  };
+}
+
+/**
+ * This function accepts and discards inputs; it has no side effects. This is
+ * primarily useful idiomatically for overridable function endpoints which
+ * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
+ */
+var emptyFunction = function emptyFunction() {};
+
+emptyFunction.thatReturns = makeEmptyFunction;
+emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
+emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
+emptyFunction.thatReturnsNull = makeEmptyFunction(null);
+emptyFunction.thatReturnsThis = function () {
+  return this;
+};
+emptyFunction.thatReturnsArgument = function (arg) {
+  return arg;
+};
+
+module.exports = emptyFunction;
+
+/***/ }),
+/* 34 */
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/css-loader??ref--13-1!../node_modules/postcss-loader/lib??ref--13-2!../node_modules/resolve-url-loader??ref--13-3!../node_modules/sass-loader/lib/loader.js??ref--13-4!./iframe/iframe.scss ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ 35)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".iframe-iframe__uiFeedback__17Goy {\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 6001;\n  width: 100%;\n  height: 100%;\n  border: 0;\n  background: rgba(255, 255, 255, 0.8);\n}\n\n", ""]);
+
+// exports
+exports.locals = {
+	"uiFeedback": "iframe-iframe__uiFeedback__17Goy"
+};
+
+/***/ }),
+/* 35 */
+/*!**************************************************!*\
+  !*** ../node_modules/css-loader/lib/css-base.js ***!
+  \**************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+/* 36 */
+/*!*****************************************************!*\
+  !*** ../node_modules/style-loader/lib/addStyles.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+
+var stylesInDom = {};
+
+var	memoize = function (fn) {
+	var memo;
+
+	return function () {
+		if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+		return memo;
+	};
+};
+
+var isOldIE = memoize(function () {
+	// Test for IE <= 9 as proposed by Browserhacks
+	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+	// Tests for existence of standard globals is to allow style-loader
+	// to operate correctly into non-standard environments
+	// @see https://github.com/webpack-contrib/style-loader/issues/177
+	return window && document && document.all && !window.atob;
+});
+
+var getElement = (function (fn) {
+	var memo = {};
+
+	return function(selector) {
+		if (typeof memo[selector] === "undefined") {
+			memo[selector] = fn.call(this, selector);
+		}
+
+		return memo[selector]
+	};
+})(function (target) {
+	return document.querySelector(target)
+});
+
+var singleton = null;
+var	singletonCounter = 0;
+var	stylesInsertedAtTop = [];
+
+var	fixUrls = __webpack_require__(/*! ./urls */ 37);
+
+module.exports = function(list, options) {
+	if (typeof DEBUG !== "undefined" && DEBUG) {
+		if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+	}
+
+	options = options || {};
+
+	options.attrs = typeof options.attrs === "object" ? options.attrs : {};
+
+	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+	// tags it will allow on a page
+	if (!options.singleton) options.singleton = isOldIE();
+
+	// By default, add <style> tags to the <head> element
+	if (!options.insertInto) options.insertInto = "head";
+
+	// By default, add <style> tags to the bottom of the target
+	if (!options.insertAt) options.insertAt = "bottom";
+
+	var styles = listToStyles(list, options);
+
+	addStylesToDom(styles, options);
+
+	return function update (newList) {
+		var mayRemove = [];
+
+		for (var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+
+			domStyle.refs--;
+			mayRemove.push(domStyle);
+		}
+
+		if(newList) {
+			var newStyles = listToStyles(newList, options);
+			addStylesToDom(newStyles, options);
+		}
+
+		for (var i = 0; i < mayRemove.length; i++) {
+			var domStyle = mayRemove[i];
+
+			if(domStyle.refs === 0) {
+				for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
+
+				delete stylesInDom[domStyle.id];
+			}
+		}
+	};
+};
+
+function addStylesToDom (styles, options) {
+	for (var i = 0; i < styles.length; i++) {
+		var item = styles[i];
+		var domStyle = stylesInDom[item.id];
+
+		if(domStyle) {
+			domStyle.refs++;
+
+			for(var j = 0; j < domStyle.parts.length; j++) {
+				domStyle.parts[j](item.parts[j]);
+			}
+
+			for(; j < item.parts.length; j++) {
+				domStyle.parts.push(addStyle(item.parts[j], options));
+			}
+		} else {
+			var parts = [];
+
+			for(var j = 0; j < item.parts.length; j++) {
+				parts.push(addStyle(item.parts[j], options));
+			}
+
+			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+		}
+	}
+}
+
+function listToStyles (list, options) {
+	var styles = [];
+	var newStyles = {};
+
+	for (var i = 0; i < list.length; i++) {
+		var item = list[i];
+		var id = options.base ? item[0] + options.base : item[0];
+		var css = item[1];
+		var media = item[2];
+		var sourceMap = item[3];
+		var part = {css: css, media: media, sourceMap: sourceMap};
+
+		if(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});
+		else newStyles[id].parts.push(part);
+	}
+
+	return styles;
+}
+
+function insertStyleElement (options, style) {
+	var target = getElement(options.insertInto)
+
+	if (!target) {
+		throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
+	}
+
+	var lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];
+
+	if (options.insertAt === "top") {
+		if (!lastStyleElementInsertedAtTop) {
+			target.insertBefore(style, target.firstChild);
+		} else if (lastStyleElementInsertedAtTop.nextSibling) {
+			target.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);
+		} else {
+			target.appendChild(style);
+		}
+		stylesInsertedAtTop.push(style);
+	} else if (options.insertAt === "bottom") {
+		target.appendChild(style);
+	} else {
+		throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+	}
+}
+
+function removeStyleElement (style) {
+	if (style.parentNode === null) return false;
+	style.parentNode.removeChild(style);
+
+	var idx = stylesInsertedAtTop.indexOf(style);
+	if(idx >= 0) {
+		stylesInsertedAtTop.splice(idx, 1);
+	}
+}
+
+function createStyleElement (options) {
+	var style = document.createElement("style");
+
+	options.attrs.type = "text/css";
+
+	addAttrs(style, options.attrs);
+	insertStyleElement(options, style);
+
+	return style;
+}
+
+function createLinkElement (options) {
+	var link = document.createElement("link");
+
+	options.attrs.type = "text/css";
+	options.attrs.rel = "stylesheet";
+
+	addAttrs(link, options.attrs);
+	insertStyleElement(options, link);
+
+	return link;
+}
+
+function addAttrs (el, attrs) {
+	Object.keys(attrs).forEach(function (key) {
+		el.setAttribute(key, attrs[key]);
+	});
+}
+
+function addStyle (obj, options) {
+	var style, update, remove, result;
+
+	// If a transform function was defined, run it on the css
+	if (options.transform && obj.css) {
+	    result = options.transform(obj.css);
+
+	    if (result) {
+	    	// If transform returns a value, use that instead of the original css.
+	    	// This allows running runtime transformations on the css.
+	    	obj.css = result;
+	    } else {
+	    	// If the transform function returns a falsy value, don't add this css.
+	    	// This allows conditional loading of css
+	    	return function() {
+	    		// noop
+	    	};
+	    }
+	}
+
+	if (options.singleton) {
+		var styleIndex = singletonCounter++;
+
+		style = singleton || (singleton = createStyleElement(options));
+
+		update = applyToSingletonTag.bind(null, style, styleIndex, false);
+		remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+
+	} else if (
+		obj.sourceMap &&
+		typeof URL === "function" &&
+		typeof URL.createObjectURL === "function" &&
+		typeof URL.revokeObjectURL === "function" &&
+		typeof Blob === "function" &&
+		typeof btoa === "function"
+	) {
+		style = createLinkElement(options);
+		update = updateLink.bind(null, style, options);
+		remove = function () {
+			removeStyleElement(style);
+
+			if(style.href) URL.revokeObjectURL(style.href);
+		};
+	} else {
+		style = createStyleElement(options);
+		update = applyToTag.bind(null, style);
+		remove = function () {
+			removeStyleElement(style);
+		};
+	}
+
+	update(obj);
+
+	return function updateStyle (newObj) {
+		if (newObj) {
+			if (
+				newObj.css === obj.css &&
+				newObj.media === obj.media &&
+				newObj.sourceMap === obj.sourceMap
+			) {
+				return;
+			}
+
+			update(obj = newObj);
+		} else {
+			remove();
+		}
+	};
+}
+
+var replaceText = (function () {
+	var textStore = [];
+
+	return function (index, replacement) {
+		textStore[index] = replacement;
+
+		return textStore.filter(Boolean).join('\n');
+	};
+})();
+
+function applyToSingletonTag (style, index, remove, obj) {
+	var css = remove ? "" : obj.css;
+
+	if (style.styleSheet) {
+		style.styleSheet.cssText = replaceText(index, css);
+	} else {
+		var cssNode = document.createTextNode(css);
+		var childNodes = style.childNodes;
+
+		if (childNodes[index]) style.removeChild(childNodes[index]);
+
+		if (childNodes.length) {
+			style.insertBefore(cssNode, childNodes[index]);
+		} else {
+			style.appendChild(cssNode);
+		}
+	}
+}
+
+function applyToTag (style, obj) {
+	var css = obj.css;
+	var media = obj.media;
+
+	if(media) {
+		style.setAttribute("media", media)
+	}
+
+	if(style.styleSheet) {
+		style.styleSheet.cssText = css;
+	} else {
+		while(style.firstChild) {
+			style.removeChild(style.firstChild);
+		}
+
+		style.appendChild(document.createTextNode(css));
+	}
+}
+
+function updateLink (link, options, obj) {
+	var css = obj.css;
+	var sourceMap = obj.sourceMap;
+
+	/*
+		If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
+		and there is no publicPath defined then lets turn convertToAbsoluteUrls
+		on by default.  Otherwise default to the convertToAbsoluteUrls option
+		directly
+	*/
+	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
+
+	if (options.convertToAbsoluteUrls || autoFixUrls) {
+		css = fixUrls(css);
+	}
+
+	if (sourceMap) {
+		// http://stackoverflow.com/a/26603875
+		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+	}
+
+	var blob = new Blob([css], { type: "text/css" });
+
+	var oldSrc = link.href;
+
+	link.href = URL.createObjectURL(blob);
+
+	if(oldSrc) URL.revokeObjectURL(oldSrc);
+}
+
+
+/***/ }),
+/* 37 */
+/*!************************************************!*\
+  !*** ../node_modules/style-loader/lib/urls.js ***!
+  \************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports) {
+
+
+/**
+ * When source maps are enabled, `style-loader` uses a link element with a data-uri to
+ * embed the css on the page. This breaks all relative urls because now they are relative to a
+ * bundle instead of the current page.
+ *
+ * One solution is to only use full urls, but that may be impossible.
+ *
+ * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
+ *
+ * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
+ *
+ */
+
+module.exports = function (css) {
+  // get current location
+  var location = typeof window !== "undefined" && window.location;
+
+  if (!location) {
+    throw new Error("fixUrls requires window.location");
+  }
+
+	// blank or null?
+	if (!css || typeof css !== "string") {
+	  return css;
+  }
+
+  var baseUrl = location.protocol + "//" + location.host;
+  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
+
+	// convert each url(...)
+	/*
+	This regular expression is just a way to recursively match brackets within
+	a string.
+
+	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
+	   (  = Start a capturing group
+	     (?:  = Start a non-capturing group
+	         [^)(]  = Match anything that isn't a parentheses
+	         |  = OR
+	         \(  = Match a start parentheses
+	             (?:  = Start another non-capturing groups
+	                 [^)(]+  = Match anything that isn't a parentheses
+	                 |  = OR
+	                 \(  = Match a start parentheses
+	                     [^)(]*  = Match anything that isn't a parentheses
+	                 \)  = Match a end parentheses
+	             )  = End Group
+              *\) = Match anything and then a close parens
+          )  = Close non-capturing group
+          *  = Match anything
+       )  = Close capturing group
+	 \)  = Match a close parens
+
+	 /gi  = Get all matches, not the first.  Be case insensitive.
+	 */
+	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
+		// strip quotes (if they exist)
+		var unquotedOrigUrl = origUrl
+			.trim()
+			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
+			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
+
+		// already a full url? no change
+		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/)/i.test(unquotedOrigUrl)) {
+		  return fullMatch;
+		}
+
+		// convert the url to a full url
+		var newUrl;
+
+		if (unquotedOrigUrl.indexOf("//") === 0) {
+		  	//TODO: should we add protocol?
+			newUrl = unquotedOrigUrl;
+		} else if (unquotedOrigUrl.indexOf("/") === 0) {
+			// path should be relative to the base url
+			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
+		} else {
+			// path should be relative to current directory
+			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
+		}
+
+		// send back the fixed url(...)
+		return "url(" + JSON.stringify(newUrl) + ")";
+	});
+
+	// send back the fixed css
+	return fixedCss;
+};
+
+
+/***/ }),
+/* 38 */
+/*!**************************************************************************************!*\
+  !*** ../node_modules/@wix/ai-feedback-common/dist/src/constants/layout.constants.js ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var EditRegionsActions;
+(function (EditRegionsActions) {
+    EditRegionsActions["Add"] = "add";
+    EditRegionsActions["Remove"] = "remove";
+    EditRegionsActions["Move"] = "move";
+    EditRegionsActions["Resize"] = "resize";
+})(EditRegionsActions = exports.EditRegionsActions || (exports.EditRegionsActions = {}));
+var Layouts;
+(function (Layouts) {
+    Layouts["RegionsRecognition"] = "regions-recognition";
+})(Layouts = exports.Layouts || (exports.Layouts = {}));
+//# sourceMappingURL=layout.constants.js.map
+
+/***/ }),
+/* 39 */
+/*!******************************************************************************************!*\
+  !*** ../node_modules/@wix/ai-feedback-common/dist/src/constants/page-names.constants.js ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var PageNames;
+(function (PageNames) {
+    PageNames["Question"] = "question";
+    PageNames["Edit"] = "edit";
+    PageNames["ThankYou"] = "thank_you";
+})(PageNames = exports.PageNames || (exports.PageNames = {}));
+//# sourceMappingURL=page-names.constants.js.map
+
+/***/ }),
+/* 40 */
+/*!****************************************************************************************!*\
+  !*** ../node_modules/@wix/ai-feedback-common/dist/src/constants/messages.constants.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var ClientIncomingMessageTypes;
+(function (ClientIncomingMessageTypes) {
+    ClientIncomingMessageTypes["OpenQuestion"] = "AI_FEEDBACK.OPEN_QUESTION";
+})(ClientIncomingMessageTypes = exports.ClientIncomingMessageTypes || (exports.ClientIncomingMessageTypes = {}));
+var ClientOutgoingMessageTypes;
+(function (ClientOutgoingMessageTypes) {
+    ClientOutgoingMessageTypes["Ready"] = "AI_FEEDBACK.READY";
+    ClientOutgoingMessageTypes["CloseFrame"] = "AI_FEEDBACK.CLOSE_FRAME";
+    ClientOutgoingMessageTypes["LayoutIsReady"] = "AI_FEEDBACK.LAYOUT_IS_READY";
+})(ClientOutgoingMessageTypes = exports.ClientOutgoingMessageTypes || (exports.ClientOutgoingMessageTypes = {}));
+var CloseReason;
+(function (CloseReason) {
+    CloseReason["FinishedFlow"] = "finished-flow";
+    CloseReason["Canceled"] = "canceled";
+})(CloseReason = exports.CloseReason || (exports.CloseReason = {}));
+//# sourceMappingURL=messages.constants.js.map
+
+/***/ }),
+/* 41 */
+/*!*******************************************************************************!*\
+  !*** ../node_modules/@wix/ai-feedback-common/dist/src/utils/getRandomGuid.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+function getRandomGuid4() {
+    // tslint:disable:no-bitwise
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = (Math.random() * 16) | 0;
+        var v = c === 'x' ? r : (r & 0x3) | 0x8;
+        return v.toString(16);
+    });
+}
+exports.getRandomGuid4 = getRandomGuid4;
+//# sourceMappingURL=getRandomGuid.js.map
+
+/***/ }),
+/* 42 */
+/*!******************************************!*\
+  !*** ../node_modules/axios/lib/axios.js ***!
+  \******************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./utils */ 1);
+var bind = __webpack_require__(/*! ./helpers/bind */ 12);
+var Axios = __webpack_require__(/*! ./core/Axios */ 44);
+var defaults = __webpack_require__(/*! ./defaults */ 4);
+
+/**
+ * Create an instance of Axios
+ *
+ * @param {Object} defaultConfig The default config for the instance
+ * @return {Axios} A new instance of Axios
+ */
+function createInstance(defaultConfig) {
+  var context = new Axios(defaultConfig);
+  var instance = bind(Axios.prototype.request, context);
+
+  // Copy axios.prototype to instance
+  utils.extend(instance, Axios.prototype, context);
+
+  // Copy context to instance
+  utils.extend(instance, context);
+
+  return instance;
+}
+
+// Create the default instance to be exported
+var axios = createInstance(defaults);
+
+// Expose Axios class to allow class inheritance
+axios.Axios = Axios;
+
+// Factory for creating new instances
+axios.create = function create(instanceConfig) {
+  return createInstance(utils.merge(defaults, instanceConfig));
+};
+
+// Expose Cancel & CancelToken
+axios.Cancel = __webpack_require__(/*! ./cancel/Cancel */ 16);
+axios.CancelToken = __webpack_require__(/*! ./cancel/CancelToken */ 59);
+axios.isCancel = __webpack_require__(/*! ./cancel/isCancel */ 15);
+
+// Expose all/spread
+axios.all = function all(promises) {
+  return Promise.all(promises);
+};
+axios.spread = __webpack_require__(/*! ./helpers/spread */ 60);
+
+module.exports = axios;
+
+// Allow use of default import syntax in TypeScript
+module.exports.default = axios;
+
+
+/***/ }),
+/* 43 */
+/*!******************************************!*\
+  !*** ../node_modules/is-buffer/index.js ***!
+  \******************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports) {
+
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
+// The _isBuffer check is for Safari 5-7 support, because it's missing
+// Object.prototype.constructor. Remove this eventually
+module.exports = function (obj) {
+  return obj != null && (isBuffer(obj) || isSlowBuffer(obj) || !!obj._isBuffer)
+}
+
+function isBuffer (obj) {
+  return !!obj.constructor && typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
+}
+
+// For Node v0.10 support. Remove this eventually.
+function isSlowBuffer (obj) {
+  return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isBuffer(obj.slice(0, 0))
+}
+
+
+/***/ }),
+/* 44 */
+/*!***********************************************!*\
+  !*** ../node_modules/axios/lib/core/Axios.js ***!
+  \***********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var defaults = __webpack_require__(/*! ./../defaults */ 4);
+var utils = __webpack_require__(/*! ./../utils */ 1);
+var InterceptorManager = __webpack_require__(/*! ./InterceptorManager */ 54);
+var dispatchRequest = __webpack_require__(/*! ./dispatchRequest */ 55);
+
+/**
+ * Create a new instance of Axios
+ *
+ * @param {Object} instanceConfig The default config for the instance
+ */
+function Axios(instanceConfig) {
+  this.defaults = instanceConfig;
+  this.interceptors = {
+    request: new InterceptorManager(),
+    response: new InterceptorManager()
+  };
+}
+
+/**
+ * Dispatch a request
+ *
+ * @param {Object} config The config specific for this request (merged with this.defaults)
+ */
+Axios.prototype.request = function request(config) {
+  /*eslint no-param-reassign:0*/
+  // Allow for axios('example/url'[, config]) a la fetch API
+  if (typeof config === 'string') {
+    config = utils.merge({
+      url: arguments[0]
+    }, arguments[1]);
+  }
+
+  config = utils.merge(defaults, {method: 'get'}, this.defaults, config);
+  config.method = config.method.toLowerCase();
+
+  // Hook up interceptors middleware
+  var chain = [dispatchRequest, undefined];
+  var promise = Promise.resolve(config);
+
+  this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor) {
+    chain.unshift(interceptor.fulfilled, interceptor.rejected);
+  });
+
+  this.interceptors.response.forEach(function pushResponseInterceptors(interceptor) {
+    chain.push(interceptor.fulfilled, interceptor.rejected);
+  });
+
+  while (chain.length) {
+    promise = promise.then(chain.shift(), chain.shift());
+  }
+
+  return promise;
+};
+
+// Provide aliases for supported request methods
+utils.forEach(['delete', 'get', 'head', 'options'], function forEachMethodNoData(method) {
+  /*eslint func-names:0*/
+  Axios.prototype[method] = function(url, config) {
+    return this.request(utils.merge(config || {}, {
+      method: method,
+      url: url
+    }));
+  };
+});
+
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  /*eslint func-names:0*/
+  Axios.prototype[method] = function(url, data, config) {
+    return this.request(utils.merge(config || {}, {
+      method: method,
+      url: url,
+      data: data
+    }));
+  };
+});
+
+module.exports = Axios;
+
+
+/***/ }),
+/* 45 */
+/*!*************************************************************************!*\
+  !*** ../node_modules/node-libs-browser/node_modules/process/browser.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ }),
+/* 46 */
+/*!****************************************************************!*\
+  !*** ../node_modules/axios/lib/helpers/normalizeHeaderName.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ../utils */ 1);
+
+module.exports = function normalizeHeaderName(headers, normalizedName) {
+  utils.forEach(headers, function processHeader(value, name) {
+    if (name !== normalizedName && name.toUpperCase() === normalizedName.toUpperCase()) {
+      headers[normalizedName] = value;
+      delete headers[name];
+    }
+  });
+};
+
+
+/***/ }),
+/* 47 */
+/*!************************************************!*\
+  !*** ../node_modules/axios/lib/core/settle.js ***!
+  \************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var createError = __webpack_require__(/*! ./createError */ 14);
+
+/**
+ * Resolve or reject a Promise based on response status.
+ *
+ * @param {Function} resolve A function that resolves the promise.
+ * @param {Function} reject A function that rejects the promise.
+ * @param {object} response The response.
+ */
+module.exports = function settle(resolve, reject, response) {
+  var validateStatus = response.config.validateStatus;
+  // Note: status is not exposed by XDomainRequest
+  if (!response.status || !validateStatus || validateStatus(response.status)) {
+    resolve(response);
+  } else {
+    reject(createError(
+      'Request failed with status code ' + response.status,
+      response.config,
+      null,
+      response.request,
+      response
+    ));
+  }
+};
+
+
+/***/ }),
+/* 48 */
+/*!******************************************************!*\
+  !*** ../node_modules/axios/lib/core/enhanceError.js ***!
+  \******************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Update an Error with the specified config, error code, and response.
+ *
+ * @param {Error} error The error to update.
+ * @param {Object} config The config.
+ * @param {string} [code] The error code (for example, 'ECONNABORTED').
+ * @param {Object} [request] The request.
+ * @param {Object} [response] The response.
+ * @returns {Error} The error.
+ */
+module.exports = function enhanceError(error, config, code, request, response) {
+  error.config = config;
+  if (code) {
+    error.code = code;
+  }
+  error.request = request;
+  error.response = response;
+  return error;
+};
+
+
+/***/ }),
+/* 49 */
+/*!*****************************************************!*\
+  !*** ../node_modules/axios/lib/helpers/buildURL.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./../utils */ 1);
+
+function encode(val) {
+  return encodeURIComponent(val).
+    replace(/%40/gi, '@').
+    replace(/%3A/gi, ':').
+    replace(/%24/g, '$').
+    replace(/%2C/gi, ',').
+    replace(/%20/g, '+').
+    replace(/%5B/gi, '[').
+    replace(/%5D/gi, ']');
+}
+
+/**
+ * Build a URL by appending params to the end
+ *
+ * @param {string} url The base of the url (e.g., http://www.google.com)
+ * @param {object} [params] The params to be appended
+ * @returns {string} The formatted url
+ */
+module.exports = function buildURL(url, params, paramsSerializer) {
+  /*eslint no-param-reassign:0*/
+  if (!params) {
+    return url;
+  }
+
+  var serializedParams;
+  if (paramsSerializer) {
+    serializedParams = paramsSerializer(params);
+  } else if (utils.isURLSearchParams(params)) {
+    serializedParams = params.toString();
+  } else {
+    var parts = [];
+
+    utils.forEach(params, function serialize(val, key) {
+      if (val === null || typeof val === 'undefined') {
+        return;
+      }
+
+      if (utils.isArray(val)) {
+        key = key + '[]';
+      } else {
+        val = [val];
+      }
+
+      utils.forEach(val, function parseValue(v) {
+        if (utils.isDate(v)) {
+          v = v.toISOString();
+        } else if (utils.isObject(v)) {
+          v = JSON.stringify(v);
+        }
+        parts.push(encode(key) + '=' + encode(v));
+      });
+    });
+
+    serializedParams = parts.join('&');
+  }
+
+  if (serializedParams) {
+    url += (url.indexOf('?') === -1 ? '?' : '&') + serializedParams;
+  }
+
+  return url;
+};
+
+
+/***/ }),
+/* 50 */
+/*!*********************************************************!*\
+  !*** ../node_modules/axios/lib/helpers/parseHeaders.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./../utils */ 1);
+
+// Headers whose duplicates are ignored by node
+// c.f. https://nodejs.org/api/http.html#http_message_headers
+var ignoreDuplicateOf = [
+  'age', 'authorization', 'content-length', 'content-type', 'etag',
+  'expires', 'from', 'host', 'if-modified-since', 'if-unmodified-since',
+  'last-modified', 'location', 'max-forwards', 'proxy-authorization',
+  'referer', 'retry-after', 'user-agent'
+];
+
+/**
+ * Parse headers into an object
+ *
+ * ```
+ * Date: Wed, 27 Aug 2014 08:58:49 GMT
+ * Content-Type: application/json
+ * Connection: keep-alive
+ * Transfer-Encoding: chunked
+ * ```
+ *
+ * @param {String} headers Headers needing to be parsed
+ * @returns {Object} Headers parsed into an object
+ */
+module.exports = function parseHeaders(headers) {
+  var parsed = {};
+  var key;
+  var val;
+  var i;
+
+  if (!headers) { return parsed; }
+
+  utils.forEach(headers.split('\n'), function parser(line) {
+    i = line.indexOf(':');
+    key = utils.trim(line.substr(0, i)).toLowerCase();
+    val = utils.trim(line.substr(i + 1));
+
+    if (key) {
+      if (parsed[key] && ignoreDuplicateOf.indexOf(key) >= 0) {
+        return;
+      }
+      if (key === 'set-cookie') {
+        parsed[key] = (parsed[key] ? parsed[key] : []).concat([val]);
+      } else {
+        parsed[key] = parsed[key] ? parsed[key] + ', ' + val : val;
+      }
+    }
+  });
+
+  return parsed;
+};
+
+
+/***/ }),
+/* 51 */
+/*!************************************************************!*\
+  !*** ../node_modules/axios/lib/helpers/isURLSameOrigin.js ***!
+  \************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./../utils */ 1);
+
+module.exports = (
+  utils.isStandardBrowserEnv() ?
+
+  // Standard browser envs have full support of the APIs needed to test
+  // whether the request URL is of the same origin as current location.
+  (function standardBrowserEnv() {
+    var msie = /(msie|trident)/i.test(navigator.userAgent);
+    var urlParsingNode = document.createElement('a');
+    var originURL;
+
+    /**
+    * Parse a URL to discover it's components
+    *
+    * @param {String} url The URL to be parsed
+    * @returns {Object}
+    */
+    function resolveURL(url) {
+      var href = url;
+
+      if (msie) {
+        // IE needs attribute set twice to normalize properties
+        urlParsingNode.setAttribute('href', href);
+        href = urlParsingNode.href;
+      }
+
+      urlParsingNode.setAttribute('href', href);
+
+      // urlParsingNode provides the UrlUtils interface - http://url.spec.whatwg.org/#urlutils
+      return {
+        href: urlParsingNode.href,
+        protocol: urlParsingNode.protocol ? urlParsingNode.protocol.replace(/:$/, '') : '',
+        host: urlParsingNode.host,
+        search: urlParsingNode.search ? urlParsingNode.search.replace(/^\?/, '') : '',
+        hash: urlParsingNode.hash ? urlParsingNode.hash.replace(/^#/, '') : '',
+        hostname: urlParsingNode.hostname,
+        port: urlParsingNode.port,
+        pathname: (urlParsingNode.pathname.charAt(0) === '/') ?
+                  urlParsingNode.pathname :
+                  '/' + urlParsingNode.pathname
+      };
+    }
+
+    originURL = resolveURL(window.location.href);
+
+    /**
+    * Determine if a URL shares the same origin as the current location
+    *
+    * @param {String} requestURL The URL to test
+    * @returns {boolean} True if URL shares the same origin, otherwise false
+    */
+    return function isURLSameOrigin(requestURL) {
+      var parsed = (utils.isString(requestURL)) ? resolveURL(requestURL) : requestURL;
+      return (parsed.protocol === originURL.protocol &&
+            parsed.host === originURL.host);
+    };
+  })() :
+
+  // Non standard browser envs (web workers, react-native) lack needed support.
+  (function nonStandardBrowserEnv() {
+    return function isURLSameOrigin() {
+      return true;
+    };
+  })()
+);
+
+
+/***/ }),
+/* 52 */
+/*!*************************************************!*\
+  !*** ../node_modules/axios/lib/helpers/btoa.js ***!
+  \*************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// btoa polyfill for IE<10 courtesy https://github.com/davidchambers/Base64.js
+
+var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+
+function E() {
+  this.message = 'String contains an invalid character';
+}
+E.prototype = new Error;
+E.prototype.code = 5;
+E.prototype.name = 'InvalidCharacterError';
+
+function btoa(input) {
+  var str = String(input);
+  var output = '';
+  for (
+    // initialize result and counter
+    var block, charCode, idx = 0, map = chars;
+    // if the next str index does not exist:
+    //   change the mapping table to "="
+    //   check if d has no fractional digits
+    str.charAt(idx | 0) || (map = '=', idx % 1);
+    // "8 - idx % 1 * 8" generates the sequence 2, 4, 6, 8
+    output += map.charAt(63 & block >> 8 - idx % 1 * 8)
+  ) {
+    charCode = str.charCodeAt(idx += 3 / 4);
+    if (charCode > 0xFF) {
+      throw new E();
+    }
+    block = block << 8 | charCode;
+  }
+  return output;
+}
+
+module.exports = btoa;
+
+
+/***/ }),
+/* 53 */
+/*!****************************************************!*\
+  !*** ../node_modules/axios/lib/helpers/cookies.js ***!
+  \****************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./../utils */ 1);
+
+module.exports = (
+  utils.isStandardBrowserEnv() ?
+
+  // Standard browser envs support document.cookie
+  (function standardBrowserEnv() {
+    return {
+      write: function write(name, value, expires, path, domain, secure) {
+        var cookie = [];
+        cookie.push(name + '=' + encodeURIComponent(value));
+
+        if (utils.isNumber(expires)) {
+          cookie.push('expires=' + new Date(expires).toGMTString());
+        }
+
+        if (utils.isString(path)) {
+          cookie.push('path=' + path);
+        }
+
+        if (utils.isString(domain)) {
+          cookie.push('domain=' + domain);
+        }
+
+        if (secure === true) {
+          cookie.push('secure');
+        }
+
+        document.cookie = cookie.join('; ');
+      },
+
+      read: function read(name) {
+        var match = document.cookie.match(new RegExp('(^|;\\s*)(' + name + ')=([^;]*)'));
+        return (match ? decodeURIComponent(match[3]) : null);
+      },
+
+      remove: function remove(name) {
+        this.write(name, '', Date.now() - 86400000);
+      }
+    };
+  })() :
+
+  // Non standard browser env (web workers, react-native) lack needed support.
+  (function nonStandardBrowserEnv() {
+    return {
+      write: function write() {},
+      read: function read() { return null; },
+      remove: function remove() {}
+    };
+  })()
+);
+
+
+/***/ }),
+/* 54 */
+/*!************************************************************!*\
+  !*** ../node_modules/axios/lib/core/InterceptorManager.js ***!
+  \************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./../utils */ 1);
+
+function InterceptorManager() {
+  this.handlers = [];
+}
+
+/**
+ * Add a new interceptor to the stack
+ *
+ * @param {Function} fulfilled The function to handle `then` for a `Promise`
+ * @param {Function} rejected The function to handle `reject` for a `Promise`
+ *
+ * @return {Number} An ID used to remove interceptor later
+ */
+InterceptorManager.prototype.use = function use(fulfilled, rejected) {
+  this.handlers.push({
+    fulfilled: fulfilled,
+    rejected: rejected
+  });
+  return this.handlers.length - 1;
+};
+
+/**
+ * Remove an interceptor from the stack
+ *
+ * @param {Number} id The ID that was returned by `use`
+ */
+InterceptorManager.prototype.eject = function eject(id) {
+  if (this.handlers[id]) {
+    this.handlers[id] = null;
+  }
+};
+
+/**
+ * Iterate over all the registered interceptors
+ *
+ * This method is particularly useful for skipping over any
+ * interceptors that may have become `null` calling `eject`.
+ *
+ * @param {Function} fn The function to call for each interceptor
+ */
+InterceptorManager.prototype.forEach = function forEach(fn) {
+  utils.forEach(this.handlers, function forEachHandler(h) {
+    if (h !== null) {
+      fn(h);
+    }
+  });
+};
+
+module.exports = InterceptorManager;
+
+
+/***/ }),
+/* 55 */
+/*!*********************************************************!*\
+  !*** ../node_modules/axios/lib/core/dispatchRequest.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./../utils */ 1);
+var transformData = __webpack_require__(/*! ./transformData */ 56);
+var isCancel = __webpack_require__(/*! ../cancel/isCancel */ 15);
+var defaults = __webpack_require__(/*! ../defaults */ 4);
+var isAbsoluteURL = __webpack_require__(/*! ./../helpers/isAbsoluteURL */ 57);
+var combineURLs = __webpack_require__(/*! ./../helpers/combineURLs */ 58);
+
+/**
+ * Throws a `Cancel` if cancellation has been requested.
+ */
+function throwIfCancellationRequested(config) {
+  if (config.cancelToken) {
+    config.cancelToken.throwIfRequested();
+  }
+}
+
+/**
+ * Dispatch a request to the server using the configured adapter.
+ *
+ * @param {object} config The config that is to be used for the request
+ * @returns {Promise} The Promise to be fulfilled
+ */
+module.exports = function dispatchRequest(config) {
+  throwIfCancellationRequested(config);
+
+  // Support baseURL config
+  if (config.baseURL && !isAbsoluteURL(config.url)) {
+    config.url = combineURLs(config.baseURL, config.url);
+  }
+
+  // Ensure headers exist
+  config.headers = config.headers || {};
+
+  // Transform request data
+  config.data = transformData(
+    config.data,
+    config.headers,
+    config.transformRequest
+  );
+
+  // Flatten headers
+  config.headers = utils.merge(
+    config.headers.common || {},
+    config.headers[config.method] || {},
+    config.headers || {}
+  );
+
+  utils.forEach(
+    ['delete', 'get', 'head', 'post', 'put', 'patch', 'common'],
+    function cleanHeaderConfig(method) {
+      delete config.headers[method];
+    }
+  );
+
+  var adapter = config.adapter || defaults.adapter;
+
+  return adapter(config).then(function onAdapterResolution(response) {
+    throwIfCancellationRequested(config);
+
+    // Transform response data
+    response.data = transformData(
+      response.data,
+      response.headers,
+      config.transformResponse
+    );
+
+    return response;
+  }, function onAdapterRejection(reason) {
+    if (!isCancel(reason)) {
+      throwIfCancellationRequested(config);
+
+      // Transform response data
+      if (reason && reason.response) {
+        reason.response.data = transformData(
+          reason.response.data,
+          reason.response.headers,
+          config.transformResponse
+        );
+      }
+    }
+
+    return Promise.reject(reason);
+  });
+};
+
+
+/***/ }),
+/* 56 */
+/*!*******************************************************!*\
+  !*** ../node_modules/axios/lib/core/transformData.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./../utils */ 1);
+
+/**
+ * Transform the data for a request or a response
+ *
+ * @param {Object|String} data The data to be transformed
+ * @param {Array} headers The headers for the request or response
+ * @param {Array|Function} fns A single function or Array of functions
+ * @returns {*} The resulting transformed data
+ */
+module.exports = function transformData(data, headers, fns) {
+  /*eslint no-param-reassign:0*/
+  utils.forEach(fns, function transform(fn) {
+    data = fn(data, headers);
+  });
+
+  return data;
+};
+
+
+/***/ }),
+/* 57 */
+/*!**********************************************************!*\
+  !*** ../node_modules/axios/lib/helpers/isAbsoluteURL.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Determines whether the specified URL is absolute
+ *
+ * @param {string} url The URL to test
+ * @returns {boolean} True if the specified URL is absolute, otherwise false
+ */
+module.exports = function isAbsoluteURL(url) {
+  // A URL is considered absolute if it begins with "<scheme>://" or "//" (protocol-relative URL).
+  // RFC 3986 defines scheme name as a sequence of characters beginning with a letter and followed
+  // by any combination of letters, digits, plus, period, or hyphen.
+  return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url);
+};
+
+
+/***/ }),
+/* 58 */
+/*!********************************************************!*\
+  !*** ../node_modules/axios/lib/helpers/combineURLs.js ***!
+  \********************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Creates a new URL by combining the specified URLs
+ *
+ * @param {string} baseURL The base URL
+ * @param {string} relativeURL The relative URL
+ * @returns {string} The combined URL
+ */
+module.exports = function combineURLs(baseURL, relativeURL) {
+  return relativeURL
+    ? baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '')
+    : baseURL;
+};
+
+
+/***/ }),
+/* 59 */
+/*!*******************************************************!*\
+  !*** ../node_modules/axios/lib/cancel/CancelToken.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var Cancel = __webpack_require__(/*! ./Cancel */ 16);
+
+/**
+ * A `CancelToken` is an object that can be used to request cancellation of an operation.
+ *
+ * @class
+ * @param {Function} executor The executor function.
+ */
+function CancelToken(executor) {
+  if (typeof executor !== 'function') {
+    throw new TypeError('executor must be a function.');
+  }
+
+  var resolvePromise;
+  this.promise = new Promise(function promiseExecutor(resolve) {
+    resolvePromise = resolve;
+  });
+
+  var token = this;
+  executor(function cancel(message) {
+    if (token.reason) {
+      // Cancellation has already been requested
+      return;
+    }
+
+    token.reason = new Cancel(message);
+    resolvePromise(token.reason);
+  });
+}
+
+/**
+ * Throws a `Cancel` if cancellation has been requested.
+ */
+CancelToken.prototype.throwIfRequested = function throwIfRequested() {
+  if (this.reason) {
+    throw this.reason;
+  }
+};
+
+/**
+ * Returns an object that contains a new `CancelToken` and a function that, when called,
+ * cancels the `CancelToken`.
+ */
+CancelToken.source = function source() {
+  var cancel;
+  var token = new CancelToken(function executor(c) {
+    cancel = c;
+  });
+  return {
+    token: token,
+    cancel: cancel
+  };
+};
+
+module.exports = CancelToken;
+
+
+/***/ }),
+/* 60 */
+/*!***************************************************!*\
+  !*** ../node_modules/axios/lib/helpers/spread.js ***!
+  \***************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Syntactic sugar for invoking a function and expanding an array for arguments.
+ *
+ * Common use case would be to use `Function.prototype.apply`.
+ *
+ *  ```js
+ *  function f(x, y, z) {}
+ *  var args = [1, 2, 3];
+ *  f.apply(null, args);
+ *  ```
+ *
+ * With `spread` this example can be re-written.
+ *
+ *  ```js
+ *  spread(function(x, y, z) {})([1, 2, 3]);
+ *  ```
+ *
+ * @param {Function} callback
+ * @returns {Function}
+ */
+module.exports = function spread(callback) {
+  return function wrap(arr) {
+    return callback.apply(null, arr);
+  };
+};
+
+
+/***/ }),
+/* 61 */
+/*!*******************************!*\
+  !*** ./index.ts + 13 modules ***!
+  \*******************************/
+/*! exports provided: default, OpenerEvent, OpenerEventTypes, OpenerEventClosed, CloseReasonType */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Cannot concat with ../node_modules/@wix/ai-feedback-common/dist/src/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ../node_modules/@wix/web-bi-logger/dist/src/logger.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ../node_modules/axios/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ../node_modules/fbemitter/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./iframe/iframe.scss (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./types.ts (<- Module is not an ECMAScript module) */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ../node_modules/tslib/tslib.es6.js
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+    extendStatics(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    }
+    return __assign.apply(this, arguments);
+}
+
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
+            t[p[i]] = s[p[i]];
+    return t;
+}
+
+function __decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+
+function __param(paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+}
+
+function __metadata(metadataKey, metadataValue) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+}
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+function __exportStar(m, exports) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+
+function __values(o) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
+    if (m) return m.call(o);
+    return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+}
+
+function __read(o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+}
+
+function __spread() {
+    for (var ar = [], i = 0; i < arguments.length; i++)
+        ar = ar.concat(__read(arguments[i]));
+    return ar;
+}
+
+function __await(v) {
+    return this instanceof __await ? (this.v = v, this) : new __await(v);
+}
+
+function __asyncGenerator(thisArg, _arguments, generator) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+    function fulfill(value) { resume("next", value); }
+    function reject(value) { resume("throw", value); }
+    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+}
+
+function __asyncDelegator(o) {
+    var i, p;
+    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+}
+
+function __asyncValues(o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator], i;
+    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+}
+
+function __makeTemplateObject(cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+
+function __importStar(mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result.default = mod;
+    return result;
+}
+
+function __importDefault(mod) {
+    return (mod && mod.__esModule) ? mod : { default: mod };
+}
+
+// EXTERNAL MODULE: ../node_modules/@wix/web-bi-logger/dist/src/logger.js
+var logger = __webpack_require__(17);
+var logger_default = /*#__PURE__*/__webpack_require__.n(logger);
+
+// CONCATENATED MODULE: ./bi/bi-provider.ts
+
+var biLogger = logger_default.a
+    .factory({ endpoint: 'feedback-service' })
+    .setDefaults({
+    src: 94,
+})
+    .logger();
+
+// CONCATENATED MODULE: ./bi/track-feedback-close-click.ts
+
+
+// TODO move tracking to client.
+var trackFeedbackCloseClick = function (params) {
+    biLogger.log(__assign({}, params, { evid: 803 }));
+};
+
+// CONCATENATED MODULE: ./bi/track-load-started.ts
+
+
+var trackLoadStarted = function (params) {
+    biLogger.log(__assign({}, params, { evid: 801 }));
+};
+
+// EXTERNAL MODULE: ../node_modules/fbemitter/index.js
+var fbemitter = __webpack_require__(3);
+
+// CONCATENATED MODULE: ./transport/iframe-transport.ts
+
+var getEventData = function (event) {
+    return event.data;
+};
+var iframe_transport_IframeTransport = /** @class */ (function () {
+    function IframeTransport(targetFrame, options) {
+        var _this = this;
+        this.targetFrame = targetFrame;
+        this.options = options;
+        this.messagesEmitter = new fbemitter["EventEmitter"]();
+        this.handleMessage = function (event) {
+            if (!_this.getTargetOrigin().includes(event.origin)) {
+                return;
+            }
+            var _a = getEventData(event), type = _a.type, data = _a.data;
+            _this.messagesEmitter.emit(type, data);
+        };
+        window.addEventListener('message', this.handleMessage);
+    }
+    IframeTransport.prototype.getTargetOrigin = function () {
+        return this.options.targetOrigin;
+    };
+    IframeTransport.prototype.destroy = function () {
+        this.messagesEmitter.removeAllListeners();
+        window.removeEventListener('message', this.handleMessage);
+    };
+    IframeTransport.prototype.sendMessage = function (message) {
+        var contentWindow = this.targetFrame.contentWindow;
+        if (!contentWindow) {
+            throw Error("can not send message \"" + JSON.stringify(message) + "\", no contentWindow");
+        }
+        contentWindow.postMessage(message, this.getTargetOrigin());
+    };
+    IframeTransport.prototype.waitForMessage = function (postMessageType) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.messagesEmitter.once(postMessageType, function (data) {
+                resolve(data);
+            });
+        });
+    };
+    IframeTransport.prototype.addListener = function (postMessageType, listener) {
+        this.messagesEmitter.addListener(postMessageType, listener);
+    };
+    return IframeTransport;
+}());
+
+var createTransport = function (targetFrame, options) {
+    return new iframe_transport_IframeTransport(targetFrame, options);
+};
+
+// CONCATENATED MODULE: ./config.ts
+var prodConfig = {
+    AI_FEEDBACK_PAGE_URL: 'https://apps.wix.com/ai-feedback',
+    EXPOSURE_SERVICE_BASE_URL: 'https://media-feedback.wix.com/_api/exposure',
+    FEEDBACK_SERVICE_BASE_URL: 'https://media-feedback.wix.com/_api/feedback',
+};
+var debugConfig = {
+    AI_FEEDBACK_PAGE_URL: 'http://local.wix.com:3003',
+    EXPOSURE_SERVICE_BASE_URL: 'https://media-feedback-test.wix.com/_api/exposure',
+    FEEDBACK_SERVICE_BASE_URL: 'https://media-feedback-test.wix.com/_api/feedback',
+};
+
+// EXTERNAL MODULE: ./iframe/iframe.scss
+var iframe_iframe = __webpack_require__(18);
+
+// CONCATENATED MODULE: ./iframe/iframe.ts
+
+function createIframe(url, title, appendTo) {
+    var iframe = document.createElement('iframe');
+    iframe.src = url;
+    iframe.id = 'aiFeedback';
+    iframe.className = iframe_iframe["uiFeedback"];
+    iframe.title = title;
+    iframe.style.display = 'none';
+    appendTo.appendChild(iframe);
+    return iframe;
+}
+
+// EXTERNAL MODULE: ../node_modules/@wix/ai-feedback-common/dist/src/index.js
+var src = __webpack_require__(0);
+
+// CONCATENATED MODULE: ./constants.ts
+var CloseReasonType;
+(function (CloseReasonType) {
+    CloseReasonType["FinishedFlow"] = "finished-flow";
+    CloseReasonType["Canceled"] = "canceled";
+    CloseReasonType["ClosedByOpener"] = "closed-by-opener";
+})(CloseReasonType || (CloseReasonType = {}));
+var OpenerEventTypes;
+(function (OpenerEventTypes) {
+    OpenerEventTypes["Opened"] = "opened";
+    OpenerEventTypes["Closed"] = "closed";
+    OpenerEventTypes["Error"] = "error";
+})(OpenerEventTypes || (OpenerEventTypes = {}));
+
+// EXTERNAL MODULE: ../node_modules/axios/index.js
+var axios = __webpack_require__(19);
+var axios_default = /*#__PURE__*/__webpack_require__.n(axios);
+
+// CONCATENATED MODULE: ./transport/exposure-service.ts
+
+var exposure_service_ExposureService = /** @class */ (function () {
+    function ExposureService(config, siteToken) {
+        this.siteToken = siteToken;
+        this.transport = axios_default.a.create({
+            withCredentials: true,
+            baseURL: config.EXPOSURE_SERVICE_BASE_URL,
+        });
+    }
+    ExposureService.prototype.getShouldAskQuestion = function (questionId) {
+        return this.transport
+            .get("q/" + questionId + "?siteToken=" + this.siteToken)
+            .then(function (response) {
+            return Boolean(response.data.payload.shouldExpose);
+        });
+    };
+    return ExposureService;
+}());
+
+
+// CONCATENATED MODULE: ./utils/promise-timeout.ts
+function promiseTimeout(ms, errorFactory, promise) {
+    return new Promise(function (resolve, reject) {
+        // create a timeout to reject promise if not resolved
+        var timer = setTimeout(function () {
+            reject(errorFactory());
+        }, ms);
+        promise
+            .then(function (res) {
+            clearTimeout(timer);
+            resolve(res);
+        })
+            .catch(function (err) {
+            clearTimeout(timer);
+            reject(err);
+        });
+    });
+}
+
+// CONCATENATED MODULE: ./utils/question-state.ts
+var QuestionStateType;
+(function (QuestionStateType) {
+    QuestionStateType["None"] = "none";
+    QuestionStateType["Opening"] = "opening";
+    QuestionStateType["Shown"] = "shown";
+})(QuestionStateType || (QuestionStateType = {}));
+var isQuestionStateEmpty = function (state) {
+    return state.state === QuestionStateType.None;
+};
+
+// CONCATENATED MODULE: ./utils/session-id-provider.ts
+
+var getSessionId = function () { return Object(src["getRandomGuid4"])(); };
+
+// CONCATENATED MODULE: ./ai-feedback-opener.ts
+
+
+
+
+
+
+
+
+
+
+
+
+
+var defaultEnvConfig = { debug: false };
+function getConfig(encConfig) {
+    var debug = encConfig.debug;
+    if (!debug) {
+        return prodConfig;
+    }
+    if (debug === true) {
+        return debugConfig;
+    }
+    return __assign({}, debugConfig, debug);
+}
+var ai_feedback_opener_AiFeedbackOpener = /** @class */ (function () {
+    function AiFeedbackOpener(options, envConfig) {
+        if (envConfig === void 0) { envConfig = defaultEnvConfig; }
+        this.messagesEmitter = new fbemitter["EventEmitter"]();
+        this.currentQuestion = { state: QuestionStateType.None };
+        this.feedbackWindow = undefined;
+        this.options = options;
+        this.config = getConfig(envConfig);
+        this.exposureService = new exposure_service_ExposureService(this.config, this.options.siteToken);
+    }
+    Object.defineProperty(AiFeedbackOpener.prototype, "sessionId", {
+        get: function () {
+            if (!this._sessionId) {
+                throw new Error('`this._sessionId` is not defined');
+            }
+            return this._sessionId;
+        },
+        set: function (value) {
+            this._sessionId = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    AiFeedbackOpener.prototype.getURL = function () {
+        return this.config.AI_FEEDBACK_PAGE_URL;
+    };
+    AiFeedbackOpener.prototype.init = function () {
+        var _this = this;
+        var iframe = createIframe(this.getURL(), 'Some title', this.options.appendTo || document.body);
+        var transport = createTransport(iframe, {
+            targetOrigin: this.config.AI_FEEDBACK_PAGE_URL,
+        });
+        var feedbackWindow = {
+            iframe: iframe,
+            transport: transport,
+            loadPromise: promiseTimeout(10000, function () {
+                return new Error("Iframe haven't sent READY message withing given timeout.");
+            }, transport.waitForMessage(src["ClientOutgoingMessageTypes"].Ready)),
+        };
+        transport.addListener(src["ClientOutgoingMessageTypes"].Ready, function () {
+            // This is only for iframe reloading, so track only Shown state
+            if (_this.currentQuestion.state !== QuestionStateType.Shown) {
+                return;
+            }
+            _this.currentQuestion = {
+                state: QuestionStateType.Opening,
+                showOptions: _this.currentQuestion.showOptions,
+            };
+            transport.sendMessage({
+                type: src["ClientIncomingMessageTypes"].OpenQuestion,
+                data: _this.createDataForQuestionOpen(_this.currentQuestion.showOptions, undefined, _this.sessionId),
+            });
+        });
+        transport.addListener(src["ClientOutgoingMessageTypes"].LayoutIsReady, function () {
+            if (_this.currentQuestion.state === QuestionStateType.None) {
+                return;
+            }
+            var showOptions = _this.currentQuestion.showOptions;
+            _this.currentQuestion = { state: QuestionStateType.Shown, showOptions: showOptions };
+            iframe.style.display = 'block';
+            var contentWindow = iframe.contentWindow;
+            if (contentWindow && contentWindow.focus) {
+                contentWindow.focus();
+            }
+            _this.emitMessage({
+                type: OpenerEventTypes.Opened,
+                showOptions: showOptions,
+            });
+        });
+        transport.addListener(src["ClientOutgoingMessageTypes"].CloseFrame, function (result) {
+            var biParams = _this.getBiDefaultParams();
+            switch (result.type) {
+                case src["CloseReason"].FinishedFlow:
+                    if (Boolean(_this.options.thankYouPage)) {
+                        trackFeedbackCloseClick(__assign({}, biParams, { pageName: src["PageNames"].ThankYou }));
+                    }
+                    _this.hide({
+                        closeReason: CloseReasonType.FinishedFlow,
+                        questionResult: result.data,
+                    });
+                    return;
+                case src["CloseReason"].Canceled:
+                    trackFeedbackCloseClick(__assign({}, biParams, { pageName: src["PageNames"].Question }));
+                    _this.hide({
+                        closeReason: CloseReasonType.Canceled,
+                    });
+                    return;
+                default:
+                    _this.hide({
+                        closeReason: CloseReasonType.Canceled,
+                    });
+                    return;
+            }
+        });
+        return feedbackWindow;
+    };
+    AiFeedbackOpener.prototype.hide = function (closeResult) {
+        if (!this.feedbackWindow ||
+            this.currentQuestion.state === QuestionStateType.None) {
+            return;
+        }
+        this.feedbackWindow.iframe.style.display = 'none';
+        var showOptions = this.currentQuestion.showOptions;
+        this.currentQuestion = { state: QuestionStateType.None };
+        this.emitMessage({
+            type: OpenerEventTypes.Closed,
+            showOptions: showOptions,
+            closeEventPayload: closeResult,
+        });
+    };
+    AiFeedbackOpener.prototype.createDataForQuestionOpen = function (_a, startOpeningTime, sessionId) {
+        var customContext = _a.customContext, noDontShowAgain = _a.noDontShowAgain, params = _a.params, questionId = _a.questionId, categoryId = _a.categoryId, triggerEvent = _a.triggerEvent;
+        if (startOpeningTime === void 0) { startOpeningTime = new Date().getTime(); }
+        var _b = this.options, locale = _b.locale, siteToken = _b.siteToken, initiator = _b.initiator, metasiteId = _b.metasiteId, origin = _b.origin, thankYouPage = _b.thankYouPage;
+        return {
+            meta: {
+                startOpeningTime: startOpeningTime,
+            },
+            payload: {
+                triggerEvent: triggerEvent,
+                questionId: questionId,
+                categoryId: categoryId,
+                customContext: customContext,
+                noDontShowAgain: noDontShowAgain,
+                layout: params,
+                feedbackWindowParams: {
+                    locale: locale,
+                    siteToken: siteToken,
+                    initiator: initiator,
+                    metasiteId: metasiteId,
+                    origin: origin,
+                    thankYouPage: thankYouPage,
+                    sessionId: sessionId,
+                    feedbackServiceBaseUrl: this.config.FEEDBACK_SERVICE_BASE_URL,
+                },
+            },
+        };
+    };
+    AiFeedbackOpener.prototype.emitMessage = function (message) {
+        this.messagesEmitter.emit(message.type, message);
+    };
+    AiFeedbackOpener.prototype.preload = function () {
+        if (!this.feedbackWindow) {
+            this.feedbackWindow = this.init();
+        }
+    };
+    AiFeedbackOpener.prototype.closeFeedbackWindow = function () {
+        this.hide({ closeReason: CloseReasonType.ClosedByOpener });
+    };
+    AiFeedbackOpener.prototype.destroy = function () {
+        this.currentQuestion = { state: QuestionStateType.None };
+        if (!this.feedbackWindow) {
+            return;
+        }
+        var _a = this.feedbackWindow, iframe = _a.iframe, transport = _a.transport;
+        var parentNode = iframe.parentNode;
+        if (parentNode) {
+            parentNode.removeChild(iframe);
+        }
+        try {
+            transport.destroy();
+        }
+        finally {
+            this.feedbackWindow = undefined;
+        }
+    };
+    AiFeedbackOpener.prototype.addListener = function (eventType, listener) {
+        return this.messagesEmitter.addListener(eventType, listener);
+    };
+    AiFeedbackOpener.prototype.getBiDefaultParams = function () {
+        if (isQuestionStateEmpty(this.currentQuestion)) {
+            throw new Error('`currentQuestion.showOptions` does not exist');
+        }
+        var _a = this.currentQuestion.showOptions, questionId = _a.questionId, categoryId = _a.categoryId, triggerEvent = _a.triggerEvent, layout = _a.params.layout;
+        return {
+            sessionId: this.sessionId,
+            initiatorName: this.options.initiator,
+            metasiteId: this.options.metasiteId,
+            questionId: questionId,
+            categoryId: categoryId,
+            layout: layout,
+            trigger: triggerEvent,
+            origin: this.options.origin,
+        };
+    };
+    AiFeedbackOpener.prototype.showQuestion = function (showOptions) {
+        var _this = this;
+        // If have active question emit error
+        if (this.currentQuestion.state !== QuestionStateType.None) {
+            this.emitMessage({
+                type: OpenerEventTypes.Error,
+                showOptions: showOptions,
+                error: new Error('Cannot show question while another question is being opened. Try to close active question before showing new one.'),
+            });
+            return;
+        }
+        var startOpeningTime = new Date().getTime();
+        this.sessionId = getSessionId();
+        this.currentQuestion = { state: QuestionStateType.Opening, showOptions: showOptions };
+        var requestToExposure = this.exposureService
+            .getShouldAskQuestion(showOptions.questionId)
+            .then(function (shouldShow) {
+            if (!shouldShow) {
+                return shouldShow;
+            }
+            trackLoadStarted(_this.getBiDefaultParams());
+            return shouldShow;
+        });
+        var feedbackWindow = this.feedbackWindow || (this.feedbackWindow = this.init());
+        Promise.all([requestToExposure, feedbackWindow.loadPromise]).then(function (_a) {
+            var shouldShow = _a[0];
+            if (!shouldShow) {
+                _this.currentQuestion = { state: QuestionStateType.None };
+                // TODO: emit message that question will not be shown
+                return;
+            }
+            feedbackWindow.transport.sendMessage({
+                type: src["ClientIncomingMessageTypes"].OpenQuestion,
+                data: _this.createDataForQuestionOpen(showOptions, startOpeningTime, _this.sessionId),
+            });
+        }, function (e) {
+            _this.currentQuestion = { state: QuestionStateType.None };
+            _this.emitMessage({
+                type: OpenerEventTypes.Error,
+                showOptions: showOptions,
+                error: e,
+            });
+        });
+    };
+    return AiFeedbackOpener;
+}());
+
+
+// EXTERNAL MODULE: ./types.ts
+var types = __webpack_require__(5);
+
+// CONCATENATED MODULE: ./index.ts
+/* concated harmony reexport OpenerEvent */__webpack_require__.d(__webpack_exports__, "OpenerEvent", function() { return types["OpenerEvent"]; });
+/* concated harmony reexport OpenerEventTypes */__webpack_require__.d(__webpack_exports__, "OpenerEventTypes", function() { return OpenerEventTypes; });
+/* concated harmony reexport OpenerEventClosed */__webpack_require__.d(__webpack_exports__, "OpenerEventClosed", function() { return types["OpenerEventClosed"]; });
+/* concated harmony reexport CloseReasonType */__webpack_require__.d(__webpack_exports__, "CloseReasonType", function() { return CloseReasonType; });
+
+
+
+/* harmony default export */ var index = __webpack_exports__["default"] = (ai_feedback_opener_AiFeedbackOpener);
+
+
+
+/***/ })
+/******/ ]);
+});
+//# sourceMappingURL=AiFeedbackOpener.bundle.js.map

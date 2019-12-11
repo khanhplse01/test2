@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<!-- saved from url=(0286)https://static.parastorage.com/services/santa/1.5466.3/static/external/googleMap.html?language=en&lat=14.058324&long=108.277199&address=500%20Terry%20Francois%20Street,%206th%20Floor.%20San%20Francisco,%20CA%2094158&addressInfo=Vietnam&showZoom=true&showStreetView=true&showMapType=true -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style type="text/css">.gm-style-pbc{transition:opacity ease-in-out;background-color:rgba(0,0,0,0.45);text-align:center}.gm-style-pbt{font-size:22px;color:white;font-family:Roboto,Arial,sans-serif;position:relative;margin:0;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
+</style>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <style type="text/css">
+        * {
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0
+        }
+
+        #map_canvas {
+            height: 100%;
+            width: 100%;
+        }
+
+        .gm-style-iw p {
+            width: 101%;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var lastReceivedMsg = null;
+        if (String && String.prototype && !String.prototype.trim) {
+            String.prototype.trim = function () {
+                return this.replace(/^\s+|\s+$/gm, '');
+            };
+        }
+
+        function getUrlParams() {
+            var query = location.search.substring(1),
+                queryPairs = query.split('&'),
+                queryPair,
+                i,
+                params = {};
+
+            for (i = 0; i < queryPairs.length; i++) {
+                queryPair = queryPairs[i].split('=');
+                params[decodeURIComponent(queryPair[0])] = decodeURIComponent(queryPair[1] || '');
+            }
+
+            return params;
+        }
+
+        function castMapParams(params) {
+            function isTruthy(val) {
+                return val === true || val === 'true';
+            }
+            params.lat = parseFloat(params.lat) || 37.7552464;
+            params.long = parseFloat(params.long) || -122.4185384;
+            params.showZoom = isTruthy(params.showZoom);
+            params.showStreetView = isTruthy(params.showStreetView);
+            params.showMapType = isTruthy(params.showMapType);
+            params.mapInteractive = isTruthy(params.mapInteractive);
+            params.addressInfo = (params.addressInfo || '').trim().replace(/<\/?[^>]+>/g, " ");
+            params.address = (params.address || '').trim().replace(/<\/?[^>]+>/g, " ");
+            return params;
+        }
+
+        function getMapParams(params) {
+            var convertedParams = {
+                'zoom': 14,
+                'center': window.googleMapsLatLongInstance,
+                'zoomControl': params.showZoom,
+                'streetViewControl': params.showStreetView,
+                'mapTypeControl': params.showMapType,
+                'scaleControl': true,
+                'draggable': params.mapInteractive,
+                'disableDefaultUI': !params.mapInteractive,
+                'disableDoubleClickZoom': !params.mapInteractive,
+                'scrollwheel': params.mapInteractive
+            };
+
+            if (params.mapType) {
+                convertedParams.mapTypeId = google.maps.MapTypeId[params.mapType];
+            }
+
+            if (params.mapStyle) {
+                convertedParams.styles = JSON.parse(params.mapStyle);
+            }
+
+            return convertedParams;
+        }
+
+        function getMarkerTitle (params) {
+            return params.addressInfo ? '' : 'Click to see more...';
+        }
+
+        function getInfoWindowContent(params) {
+            return params.addressInfo || params.address;
+        }
+
+        function createMap(params) {
+            formattedParams = getMapParams(params);
+            var map = new google.maps.Map(document.getElementById("map_canvas"), formattedParams);
+            return map;
+        }
+
+        function createMarker(map, title) {
+            return new google.maps.Marker({
+                position: window.googleMapsLatLongInstance,
+                map: map,
+                title: title
+            });
+        }
+
+        function createLatLong(lat, long) {
+            return new google.maps.LatLng(lat, long);
+        }
+
+        function createInfoWindow(content) {
+            return new google.maps.InfoWindow({
+                maxWidth: (window.innerWidth ? window.innerWidth : document.documentElement.clientWidth) * .7, // fix for autoPan bug
+                content: content
+            })
+        }
+
+        function updateMap(msg) {
+            if (!msg || !window.googleMapsInstance) {
+                return;
+            }
+
+            var parsedParams = JSON.parse(msg.data);
+            window.googleMapsLatLongInstance = createLatLong(parsedParams.lat, parsedParams.long);
+
+            var formattedParams = getMapParams(parsedParams);
+            window.googleMapsInstance.setOptions(formattedParams);
+            window.googleMapsMarkerInstance.setOptions({position: window.googleMapsLatLongInstance, title: getMarkerTitle(parsedParams)});
+            window.googleMapsInfoWindowInstance.setOptions({position: window.googleMapsLatLongInstance, content: getInfoWindowContent(parsedParams)});
+        }
+
+        function bindEvents(map, marker, infoWindow) {
+            google.maps.event.addListener(marker, 'click', function () {
+                marker.setTitle("");
+                infoWindow.open(map, marker);
+            });
+
+            google.maps.event.addListener(infoWindow, 'closeclick', function () {
+                marker.setTitle("Click to see more...");
+                map.setCenter(window.googleMapsLatLongInstance);
+            });
+
+            //spike for google maps known bug https://code.google.com/p/gmaps-api-issues/issues/detail?id=5713
+            google.maps.event.addListenerOnce(map, 'idle', function () {
+                setTimeout(function () {
+                    marker.setTitle("");
+                    infoWindow.open(map, marker);
+                }, 100);
+            });
+        }
+
+        function loadScript(language, callback){
+            var scriptNode = document.createElement('script');
+            scriptNode.type = "text/javascript";
+            scriptNode.src = "//maps.googleapis.com/maps/api/js?client=gme-wixcomltd2&callback=initMap&language=" + language;
+
+            document.body.appendChild(scriptNode);
+        }
+
+        function initMap(){
+            var parsedMsg;
+            try {
+                parsedMsg = JSON.parse(lastReceivedMsg.data);
+            } catch (e) {
+                parsedMsg = getUrlParams();
+            }
+            var parsedParams = castMapParams(parsedMsg);
+
+            window.googleMapsLatLongInstance = createLatLong(parsedParams.lat, parsedParams.long);
+            window.googleMapsInstance = createMap(parsedParams);
+            window.googleMapsMarkerInstance = createMarker(window.googleMapsInstance, getMarkerTitle(parsedParams));
+            window.googleMapsInfoWindowInstance = createInfoWindow(getInfoWindowContent(parsedParams));
+            bindEvents(window.googleMapsInstance, window.googleMapsMarkerInstance, window.googleMapsInfoWindowInstance);
+        }
+
+        function saveMsgAndUpdateMap(msg) {
+            lastReceivedMsg = msg;
+            updateMap(msg);
+        }
+
+        function initialize() {
+            window.addEventListener('message', saveMsgAndUpdateMap, false);
+            loadScript(getUrlParams().language);
+        }
+
+    </script>
+<script type="text/javascript" charset="UTF-8" src="./common.js.download"></script><script type="text/javascript" charset="UTF-8" src="./util.js.download"></script><script type="text/javascript" charset="UTF-8" src="./map.js.download"></script><script type="text/javascript" charset="UTF-8" src="./marker.js.download"></script><style type="text/css">.gm-style {
+        font: 400 11px Roboto, Arial, sans-serif;
+        text-decoration: none;
+      }
+      .gm-style img { max-width: none; }</style><script type="text/javascript" charset="UTF-8" src="./onion.js.download"></script><script type="text/javascript" charset="UTF-8" src="./infowindow.js.download"></script><script type="text/javascript" charset="UTF-8" src="./stats.js.download"></script></head>
+<body onload="initialize()">
+<div id="map_canvas" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"><div tabindex="0" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: pan-x pan-y;"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 1; transform: matrix(1, 0, 0, 1, -209, -172);"></div></div></div><div class="gm-style-pbc" style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;"><p class="gm-style-pbt"></p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 4; position: absolute; left: 50%; top: 50%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div><iframe frameborder="0" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;" src="./saved_resource.html" __idm_frm__="200"></iframe></div></div></div>
+
+
+<script type="text/javascript" src="./js"></script><div style="position: absolute; left: 0px; top: -2px; height: 1px; overflow: hidden; visibility: hidden; width: 1px;"><span style="position: absolute; font-size: 300px; width: auto; height: auto; margin: 0px; padding: 0px; font-family: Roboto, Arial, sans-serif;">BESbswy</span></div></body></html>
